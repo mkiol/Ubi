@@ -214,6 +214,7 @@ Page {
             fileSelector.close();
             Utils.setLastFolder(folder);
             var path = content_path+"/"+file;
+            //console.log(path);
             U1.uploadFile(secrets,root,path,file,folder,Utils);
         }
 

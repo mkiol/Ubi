@@ -48,7 +48,7 @@ Item {
         height: parent.height
         radius: 10
 
-        property string currentFilePath: folder
+        property string currentFilePath: folderModel.folder
         property bool load: true
         property string folder: folderModel.folder
 
@@ -57,6 +57,9 @@ Item {
 
         function setFolder(folder)
         {
+            console.log(root.folder);
+            console.log(folder);
+
             folderAnimation.folderToChange = folder;
             folderAnimation.start();
         }

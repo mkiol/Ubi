@@ -39,10 +39,13 @@ Page {
 
         Spacer{}
         Spacer{}
-        Spacer{}
-        Spacer{}*/
+        */
 
-        Button {
+        Spacer{}
+        Spacer{}
+
+        ButtonNew {
+            height: 100; width: 200
             label: qsTr("Files")
             anchors.horizontalCenter: parent.horizontalCenter
             onButtonClicked: {
@@ -60,14 +63,16 @@ Page {
             disabled: true
         }*/
 
-        Button {
+        ButtonNew {
+            height: 100; width: 200
             label: qsTr("Account")
             anchors.horizontalCenter: parent.horizontalCenter
             onButtonClicked: {
                 pageStack.push("AccountPage.qml");
             }
         }
-        Button {
+        ButtonNew {
+            height: 100; width: 200
             label: qsTr("Settings")
             anchors.horizontalCenter: parent.horizontalCenter
             onButtonClicked: pageStack.push("SettingsPage.qml");
@@ -88,9 +93,11 @@ Page {
         z: 200
         fontSize: 28
         //iconSource: "images/ubi50.png"
-        text: qsTr("<b>Ubi</b> 0.9.1<br/>"
-              +"Ubuntu One client for Maemo 5<br/>"
-              +"<small>Copyright © 2012 Michal Kosciesza</small><br/>")
+        text: qsTr("<p><b>Ubi</b></p>"
+              +"<p>An unofficial Ubuntu One app for Maemo 5 "
+              +"and other Qt-enabled platforms.</p>"
+              +"<p><small>http://ubi.garage.maemo.org</small></p>"
+              +"<p><small>© 2012 Michal Kosciesza</small></p>")
         onOpened: mask.state = "dialog"
         onCanceled: mask.state = "idle"
     }
@@ -102,6 +109,6 @@ Page {
         anchors.horizontalCenter: parent.horizontalCenter
         font.pixelSize: 18
         color: "white"
-        text: "| v0.9.0 beta |"
+        text: "ver. 0.9.0"
     }
 }

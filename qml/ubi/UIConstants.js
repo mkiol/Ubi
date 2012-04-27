@@ -35,8 +35,7 @@ var DEFAULT_TIP_BACKGROUND_COLOR = "red";
 var DEFAULT_TIP_FOREGROUND_COLOR = "white";
 var DEFAULT_TEXT_COLOR = DEFAULT_FOREGROUND_COLOR;
 
-//var DEFAULT_FOLDER = "/";
-var DEFAULT_FOLDER = "/home/user/MyDocs";
+var DEFAULT_FOLDER = "file:///home/user/MyDocs";
 
 var SYSTEM_BAR_HEIGHT = 60;
 var TEXT_MARGIN = 30;

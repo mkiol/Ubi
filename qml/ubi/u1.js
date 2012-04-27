@@ -298,7 +298,9 @@ function getFileContent(secrets,root,path,folder,size,utils)
 function uploadFile(secrets,root,path,filename,folder,utils)
 {
     //var url = "https://one.ubuntu.com/api/file_storage/v1"+encodeURI(path);
+    //var url = "https://files.one.ubuntu.com"+path;
     var url = "https://files.one.ubuntu.com"+encodeURI(path);
+    //console.log(url);
     var ffolder = fixFolder(folder);
     var auth = oAuthHeader(url,secrets,"PUT");
     utils.uploadFile(ffolder,filename,url,auth);

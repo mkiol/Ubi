@@ -50,15 +50,15 @@ SOURCES += main.cpp \
 #    qml/ubi/FilesPage.qml \
 #    qml/ubi/LoginPage.qml \
 #    qml/ubi/main.qml \
-#    qml/ubi/PageStack.qml \
+#   qml/ubi/PageStack.qml \
 #    qml/ubi/PropertiesPage.qml \
-#   qml/ubi/SettingsPage.qml \
+#    qml/ubi/SettingsPage.qml \
 #    qml/ubi/Shadow.qml \
 #    qml/ubi/StartPage.qml \
 #    qml/ubi/SystemBar.qml \
 #    qml/ubi/TaskBar.qml \
 #    qml/ubi/DownloadProgressBar.qml \
-#    qml/ubi/components/DialogYesNo.qml
+#   qml/ubi/components/DialogYesNo.qml
 #}
 
 # Please do not modify the following two lines. Required for deployment.

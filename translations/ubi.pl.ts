@@ -5,31 +5,31 @@
     <name>AccountPage</name>
     <message>
         <source>Authorization failed!</source>
-        <translation>Autoryzacja nie powiodła się!</translation>
+        <translation type="obsolete">Autoryzacja nie powiodła się!</translation>
     </message>
     <message>
         <source>Error: </source>
-        <translation>Błąd:</translation>
+        <translation type="obsolete">Błąd:</translation>
     </message>
     <message>
         <source>User name:</source>
-        <translation>Nazwa użytkownika:</translation>
+        <translation type="obsolete">Nazwa użytkownika:</translation>
     </message>
     <message>
         <source>Email:</source>
-        <translation>Email:</translation>
+        <translation type="obsolete">Email:</translation>
     </message>
     <message>
         <source>Total storage:</source>
-        <translation>Całkowita pojemność:</translation>
+        <translation type="obsolete">Całkowita pojemność:</translation>
     </message>
     <message>
         <source>Account</source>
-        <translation>Konto</translation>
+        <translation type="obsolete">Konto</translation>
     </message>
     <message>
         <source>Unable to connect!</source>
-        <translation>Błąd połączenia!</translation>
+        <translation type="obsolete">Błąd połączenia!</translation>
     </message>
 </context>
 <context>
@@ -47,62 +47,62 @@
     <name>DownloadArea</name>
     <message>
         <source>No active downloads</source>
-        <translation>Brak aktywnych pobrań</translation>
+        <translation type="obsolete">Brak aktywnych pobrań</translation>
     </message>
 </context>
 <context>
     <name>FilesPage</name>
     <message>
         <source>Upload file</source>
-        <translation>Wyślij nowy plik</translation>
+        <translation type="obsolete">Wyślij nowy plik</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation>Zmień nazwę</translation>
+        <translation type="obsolete">Zmień nazwę</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation type="obsolete">Usuń</translation>
     </message>
     <message>
         <source>New folder</source>
-        <translation>Nowy folder</translation>
+        <translation type="obsolete">Nowy folder</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation>Odśwież</translation>
+        <translation type="obsolete">Odśwież</translation>
     </message>
     <message>
         <source>Root folder can&apos;t be renamed!</source>
-        <translation>Nie można zmienić nazwy!</translation>
+        <translation type="obsolete">Nie można zmienić nazwy!</translation>
     </message>
     <message>
         <source>Root folder can&apos;t be deleted!</source>
-        <translation>Nie można zmienić nazwy!</translation>
+        <translation type="obsolete">Nie można zmienić nazwy!</translation>
     </message>
     <message>
         <source>Authorization failed!</source>
-        <translation>Autoryzacja nie powiodła się!</translation>
+        <translation type="obsolete">Autoryzacja nie powiodła się!</translation>
     </message>
     <message>
         <source>Error: </source>
-        <translation>Błąd:</translation>
+        <translation type="obsolete">Błąd:</translation>
     </message>
     <message>
         <source>Folder renamed!</source>
-        <translation>Zmieniono nazwę!</translation>
+        <translation type="obsolete">Zmieniono nazwę!</translation>
     </message>
     <message>
         <source>New folder created!</source>
-        <translation>Utworzono folder!</translation>
+        <translation type="obsolete">Utworzono folder!</translation>
     </message>
     <message>
         <source>Folder was deleted!</source>
-        <translation>Usunięto folder!</translation>
+        <translation type="obsolete">Usunięto folder!</translation>
     </message>
     <message>
         <source>Delete folder?</source>
-        <translation>Czy usunąć folder?</translation>
+        <translation type="obsolete">Czy usunąć folder?</translation>
     </message>
     <message>
         <source>Enter new folder name...</source>
@@ -110,109 +110,109 @@
     </message>
     <message>
         <source>Invalid folder name!</source>
-        <translation>Nieprawidłowa nazwa folderu!</translation>
+        <translation type="obsolete">Nieprawidłowa nazwa folderu!</translation>
     </message>
     <message>
         <source>Files</source>
-        <translation>Pliki</translation>
+        <translation type="obsolete">Pliki</translation>
     </message>
     <message>
         <source>Unable to connect!</source>
-        <translation>Błąd połączenia!</translation>
+        <translation type="obsolete">Błąd połączenia!</translation>
     </message>
     <message>
         <source>Enter new folder name:</source>
-        <translation>Podaj nową nazwę folderu:</translation>
+        <translation type="obsolete">Podaj nową nazwę folderu:</translation>
     </message>
 </context>
 <context>
     <name>LoginPage</name>
     <message>
         <source>User ID</source>
-        <translation>ID użytkownika</translation>
+        <translation type="obsolete">ID użytkownika</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation>Hasło</translation>
+        <translation type="obsolete">Hasło</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Zapisz</translation>
+        <translation type="obsolete">Zapisz</translation>
     </message>
     <message>
         <source>Logged in!</source>
-        <translation>Zalogowany!</translation>
+        <translation type="obsolete">Zalogowany!</translation>
     </message>
     <message>
         <source>Authorization failed!</source>
-        <translation>Autoryzacja nie powiodła się!</translation>
+        <translation type="obsolete">Autoryzacja nie powiodła się!</translation>
     </message>
     <message>
         <source>Error: </source>
-        <translation>Błąd:</translation>
+        <translation type="obsolete">Błąd:</translation>
     </message>
     <message>
         <source>Login</source>
-        <translation>Logowanie</translation>
+        <translation type="obsolete">Logowanie</translation>
     </message>
     <message>
         <source>Ubuntu One sign in:</source>
-        <translation>Zaloguj się do Ubuntu One:</translation>
+        <translation type="obsolete">Zaloguj się do Ubuntu One:</translation>
     </message>
     <message>
         <source>Unable to connect!</source>
-        <translation>Błąd połączenia!</translation>
+        <translation type="obsolete">Błąd połączenia!</translation>
     </message>
 </context>
 <context>
     <name>PropertiesPage</name>
     <message>
         <source>Download</source>
-        <translation>Pobierz</translation>
+        <translation type="obsolete">Pobierz</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation>Zmień nazwę</translation>
+        <translation type="obsolete">Zmień nazwę</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation type="obsolete">Usuń</translation>
     </message>
     <message>
         <source>Authorization failed!</source>
-        <translation>Autoryzacja nie powiodła się!</translation>
+        <translation type="obsolete">Autoryzacja nie powiodła się!</translation>
     </message>
     <message>
         <source>Error: </source>
-        <translation>Błąd:</translation>
+        <translation type="obsolete">Błąd:</translation>
     </message>
     <message>
         <source>Internal error!</source>
-        <translation>Błąd wewnętrzny!</translation>
+        <translation type="obsolete">Błąd wewnętrzny!</translation>
     </message>
     <message>
         <source>File renamed!</source>
-        <translation>Zmieniono nazwę!</translation>
+        <translation type="obsolete">Zmieniono nazwę!</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation>Nazwa pliku:</translation>
+        <translation type="obsolete">Nazwa pliku:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Rozmiar:</translation>
+        <translation type="obsolete">Rozmiar:</translation>
     </message>
     <message>
         <source>Created:</source>
-        <translation>Utworzono:</translation>
+        <translation type="obsolete">Utworzono:</translation>
     </message>
     <message>
         <source>Changed:</source>
-        <translation>Zmieniono:</translation>
+        <translation type="obsolete">Zmieniono:</translation>
     </message>
     <message>
         <source>Delete file?</source>
-        <translation>Czy usunąć plik?</translation>
+        <translation type="obsolete">Czy usunąć plik?</translation>
     </message>
     <message>
         <source>Enter new file name...</source>
@@ -220,30 +220,30 @@
     </message>
     <message>
         <source>Invalid file name!</source>
-        <translation>Nieprawidłowa nazwa pliku!</translation>
+        <translation type="obsolete">Nieprawidłowa nazwa pliku!</translation>
     </message>
     <message>
         <source>File deleted!</source>
-        <translation>Usunięto plik!</translation>
+        <translation type="obsolete">Usunięto plik!</translation>
     </message>
     <message>
         <source>File</source>
-        <translation>Plik</translation>
+        <translation type="obsolete">Plik</translation>
     </message>
     <message>
         <source>Unable to connect!</source>
-        <translation>Błąd połączenia!</translation>
+        <translation type="obsolete">Błąd połączenia!</translation>
     </message>
     <message>
         <source>Enter new file name:</source>
-        <translation>Podaj nową nazwę pliku:</translation>
+        <translation type="obsolete">Podaj nową nazwę pliku:</translation>
     </message>
 </context>
 <context>
     <name>SettingsPage</name>
     <message>
         <source>Settings</source>
-        <translation>Ustawienia</translation>
+        <translation type="obsolete">Ustawienia</translation>
     </message>
     <message>
         <source>Polish</source>
@@ -255,27 +255,27 @@
     </message>
     <message>
         <source>Language:</source>
-        <translation>Język:</translation>
+        <translation type="obsolete">Język:</translation>
     </message>
     <message>
         <source>Change</source>
-        <translation>Zmień</translation>
+        <translation type="obsolete">Zmień</translation>
     </message>
     <message>
         <source>Log out</source>
-        <translation>Wyloguj</translation>
+        <translation type="obsolete">Wyloguj</translation>
     </message>
     <message>
         <source>Logged as:</source>
-        <translation>Zalogowany jako:</translation>
+        <translation type="obsolete">Zalogowany jako:</translation>
     </message>
     <message>
         <source>Restart application!</source>
-        <translation>Zrestartuj aplikacje!</translation>
+        <translation type="obsolete">Zrestartuj aplikacje!</translation>
     </message>
     <message>
         <source>Choose language:</source>
-        <translation>Wybierz język:</translation>
+        <translation type="obsolete">Wybierz język:</translation>
     </message>
 </context>
 <context>
@@ -310,30 +310,34 @@
     </message>
     <message>
         <source>&lt;b&gt;Ubi&lt;/b&gt; 0.9.1&lt;br/&gt;Ubuntu One client for Maemo 5&lt;br/&gt;&lt;small&gt;Copyright © 2012 Michal Kosciesza&lt;/small&gt;&lt;br/&gt;</source>
-        <translation>&lt;b&gt;Ubi&lt;/b&gt; 0.9.1&lt;br/&gt;Aplikacja Ubuntu One dla Maemo 5&lt;br/&gt;&lt;small&gt;Copyright © 2012 Michal Kosciesza&lt;/small&gt;&lt;br/&gt;</translation>
+        <translation type="obsolete">&lt;b&gt;Ubi&lt;/b&gt; 0.9.1&lt;br/&gt;Aplikacja Ubuntu One dla Maemo 5&lt;br/&gt;&lt;small&gt;Copyright © 2012 Michal Kosciesza&lt;/small&gt;&lt;br/&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;&lt;b&gt;Ubi&lt;/b&gt;&lt;/p&gt;&lt;p&gt;An unofficial Ubuntu One app for Maemo 5 and other Qt-enabled platforms.&lt;/p&gt;&lt;p&gt;&lt;small&gt;&amp;rarr; http://ubi.garage.maemo.org&lt;/small&gt;&lt;/p&gt;&lt;p&gt;&lt;small&gt;© 2012 Michal Kosciesza&lt;/small&gt;&lt;/p&gt;</source>
+        <translation>&lt;p&gt;&lt;b&gt;Ubi&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Nieoficjalna aplikacja Ubuntu One na Maemo 5 i inne platformy obsługujące Qt.&lt;/p&gt;&lt;p&gt;&lt;small&gt;&amp;rarr; http://ubi.garage.maemo.org&lt;/small&gt;&lt;/p&gt;&lt;p&gt;&lt;small&gt;© 2012 Michal Kosciesza&lt;/small&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Error while downloading!</source>
-        <translation>Błąd podczas pobierania!</translation>
+        <translation type="obsolete">Błąd podczas pobierania!</translation>
     </message>
     <message>
         <source>Error while uploading!</source>
-        <translation>Błąd podczas wysyłania!</translation>
+        <translation type="obsolete">Błąd podczas wysyłania!</translation>
     </message>
     <message>
         <source>File downloaded!</source>
-        <translation>Plik został pobrany!</translation>
+        <translation type="obsolete">Plik został pobrany!</translation>
     </message>
     <message>
         <source>File uploaded!</source>
-        <translation>Plik został wysłany!</translation>
+        <translation type="obsolete">Plik został wysłany!</translation>
     </message>
     <message>
         <source>File added to the queue!</source>
-        <translation>Plik dodany do kolejki!</translation>
+        <translation type="obsolete">Plik dodany do kolejki!</translation>
     </message>
 </context>
 </TS>
