@@ -5,6 +5,7 @@ DialogBox {
     id: root
 
     property alias text: text.text
+    property alias textHeader: text_h.text
     property alias elide: text.elide
     property alias iconSource: icon.source
     property int fontSize: Const.DEFAULT_FONT_PIXEL_SIZE
@@ -31,15 +32,28 @@ DialogBox {
 
             Spacer {}
 
-            Row {
+            Column {
                 spacing: Const.DEFAULT_MARGIN
-                Image {
-                    id: icon
-                    width: 50
-                    height: 50
-                    visible: source!=""
-                }
 
+                Row {
+                    spacing: Const.DEFAULT_MARGIN
+                    Image {
+                        id: icon
+                        width: 50
+                        height: 50
+                        visible: source!=""
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                    Text {
+                        id: text_h
+                        color: Const.DEFAULT_DIALOG_FOREGROUND_COLOR
+                        font.pixelSize: root.fontSize
+                        wrapMode: Text.Wrap
+                        width: root.width - 6*Const.DEFAULT_MARGIN
+                        visible: text_h.text!=""
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                }
                 Text {
                     id: text
                     color: Const.DEFAULT_DIALOG_FOREGROUND_COLOR

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by Qt Creator 2.4.1, 2012-04-28T08:02:48. -->
+<!-- Written by Qt Creator 2.4.1, 2012-04-28T10:53:44. -->
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -441,6 +441,7 @@
        <value type="QString">/home/mkiol/dev/Qt/ubi-build-maemo-Maemo_Qt_4_7_0__fremantle-pr13__Release/ubi_0_0_2_armel.deb</value>
        <value type="QString">/home/mkiol/dev/Qt/ubi-build-maemo-Maemo_Qt_4_7_0__fremantle-pr13__Release/ubi_0_0_2_armel.deb</value>
        <value type="QString">/home/mkiol/dev/Qt/ubi-build-maemo-Maemo_Qt_4_7_0__fremantle-pr13__Release/ubi_0_0_2_armel.deb</value>
+       <value type="QString">/home/mkiol/dev/Qt/ubi-build-maemo-Maemo_Qt_4_7_0__fremantle-pr13__Release/ubi_0_9_0-2_armel.deb</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedHosts">
        <value type="QString">192.168.2.101</value>
@@ -448,8 +449,10 @@
        <value type="QString">192.168.2.102</value>
        <value type="QString">192.168.2.100</value>
        <value type="QString">192.168.2.101</value>
+       <value type="QString">192.168.2.101</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedRemotePaths">
+       <value type="QString"></value>
        <value type="QString"></value>
        <value type="QString"></value>
        <value type="QString"></value>
@@ -462,6 +465,7 @@
        <value type="QDateTime">2012-02-23T12:56:54</value>
        <value type="QDateTime">2012-04-22T22:36:27</value>
        <value type="QDateTime">2012-04-20T23:23:40</value>
+       <value type="QDateTime">2012-04-28T10:41:48</value>
       </valuelist>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">3</value>

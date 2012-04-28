@@ -92,12 +92,14 @@ Page {
         id: dialog
         z: 200
         fontSize: 28
-        //iconSource: "images/ubi50.png"
-        text: qsTr("<p><b>Ubi</b></p>"
-              +"<p>An unofficial Ubuntu One app for Maemo 5 "
+        iconSource: "images/ubi50.png"
+        textHeader: qsTr("<b>Ubi</b>")
+
+        text: qsTr("<p>An unofficial Ubuntu One app for Maemo 5 "
               +"and other Qt-enabled platforms.</p>"
               +"<p><small>http://ubi.garage.maemo.org</small></p>"
               +"<p><small>© 2012 Michal Kosciesza</small></p>")
+
         onOpened: mask.state = "dialog"
         onCanceled: mask.state = "idle"
     }
@@ -109,6 +111,6 @@ Page {
         anchors.horizontalCenter: parent.horizontalCenter
         font.pixelSize: 18
         color: "white"
-        text: "ver. 0.9.0"
+        text: "ver. 0.9.0-2"
     }
 }

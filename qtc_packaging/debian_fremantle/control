@@ -9,8 +9,18 @@ Homepage: http://ubi.garage.maemo.org/
 Package: ubi
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: An unofficial Ubuntu One app for Maemo 5 and other Qt-enabled platforms.
-XB-Description-pl_PL: Nieoficjalna aplikacja Ununtu One na Maemo 5 i inne platformy obsługujące Qt
+Description: An unofficial Ubuntu One app for Maemo 5.
+ The Ubi app provides access to Ubuntu One cloud service. 
+ Initial version supports simple storage management tasks
+ like: file Download, Upload and Deletion. The plan is to
+ provide other cloud features i.e. Notes editing and
+ Contact synchronization.
+XB-Description-pl_PL: Nieoficjalna aplikacja Ubuntu One na Maemo 5.
+ Ubi umożliwia dostęp do usługi Ubuntu One. Aktualna wersja
+ obsługuje proste zarządzanie plikami takie jak: Pobieranie,
+ Przesyłanie lub Usuwanie plików z chmury. Planowane jest
+ wzbogacenie aplikacji o obsługę Notatek i synchrnizacje
+ Kontaktów.
 XSBC-Bugtracker: https://garage.maemo.org/tracker/?group_id=2327
 XB-Maemo-Display-Name: Ubi
 XB-Maemo-Icon-26: iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgI
