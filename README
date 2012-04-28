@@ -1,6 +1,6 @@
 Ubi
 
-Unofficial Ubuntu One app for Maemo 5 and other Qt-enabled platforms.
+An unofficial Ubuntu One app for Maemo 5 and other Qt-enabled platforms.
 
 The Ubi app provides access to Ubuntu One cloud service. Initial version supports simple storage management tasks like: file Download, Upload and Deletion. The plan is to provide other cloud features i.e. Notes editing and Contact synchronization.
 
