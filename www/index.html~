@@ -1,6 +1,7 @@
 <html>
 <head>
-<title>Ubi</title>
+<title>Ubi: an unofficial Ubuntu One app for Maemo 5 and other Qt-enabled
+platforms</title>
 <style type="text/css">
 body {
   background-color: #dd4814;
@@ -8,16 +9,26 @@ body {
   margin: 0;
   font-family: "Ubuntu", Arial, sans-serif;
 }
+a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px dotted white;
+}
+ul {
+  list-style: square;
+}
 p {
-  margin: 10;
+  margin: 10px;
+  margin-bottom: 20px;
 }
 img {
-  border: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
   margin: 10px
 }
 div#head {
-  height: 110px;
   font-size:40px;
+  margin: 20px;
   /*border-bottom: 2px solid black;
   background-color: #77216f;*/
 }
@@ -32,14 +43,38 @@ div#content {
 </style>
 </head>
 <body>
+
 <div id="head">
-<img src="ubi120.png"/> Ubi
+<img src="ubi100.png" alt="Ubi logo" height="70" width="104"/> Ubi
 </div>
+
 <div id="content">
-<p><strong>An unofficial Ubuntu One app for Maemo 5 and other Qt-enabled platforms.</strong></p>
-<p><strong>Ubi</strong> provides access to Ubuntu One cloud service. Initial version supports simple storage management tasks like: file Download, Upload and Deletion, but the plan is to provide other cloud features i.e. Notes editing and Contact synchronization.</p>
-<p>At the moment <strong>Ubi</strong> is available only for Nokia N900.</p>
-<p>The application can be downloaded via the application manager under the Network section if you have the <i>extras-devel</i> repository enabled.</p>
+<p><strong>An unofficial Ubuntu One app for Maemo 5 and other Qt-enabled
+platforms</strong></p>
+
+<p>
+<strong>Ubi</strong> provides access to Ubuntu One cloud service. Initial
+version supports simple storage management tasks like: file Download, Upload and
+Deletion, but the plan is to provide other cloud features i.e. Notes editing and
+Contact synchronization.
+</p>
+<p>
+At the moment <strong>Ubi</strong> is available only for Nokia N900.
+</p>
+<p>
+The application can be downloaded via the application manager under the
+Network section if you have the <i>extras-devel</i> repository enabled.
+</p>
+
+<p>
+Links:
+<ul>
+<li><a href="https://garage.maemo.org/projects/ubi">Project Info page@garage</a></li>
+<li><a href="https://garage.maemo.org/tracker/?group_id=2327">Bug reports, feature requests</a></li>
+<li><a href="https://garage.maemo.org/frs/?group_id=2327">Downloads</a></li>
+</ul>
+</p>
+
 <div>
 <br/>
 <img src="screenshot00.png"/>
@@ -53,8 +88,11 @@ div#content {
 <img src="screenshot13.png"/>
 <img src="screenshot14.png"/>
 </div>
+
 <div id="foot">
 <div>
+
 </div>
+
 </body>
 </html>
