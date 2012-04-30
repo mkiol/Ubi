@@ -8,6 +8,7 @@ body {
   color: white;
   margin: 0;
   font-family: "Ubuntu", Arial, sans-serif;
+  max-width: 750px;
 }
 a {
   color: white;
@@ -60,7 +61,7 @@ Contact synchronization.
 </p>
 <p>
 At the moment <strong>Ubi</strong> is available only for Nokia N900, but in
-Download section also an experimental release for Nokia N9 was published.
+Download section also an experimental release for Nokia N9 and Symbian was published.
 </p>
 <p>
 The application can be downloaded via the application manager under the
