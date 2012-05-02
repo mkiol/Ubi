@@ -148,6 +148,25 @@ function getFiles(secrets,rootNode,root)
     xhr.send();
 }
 
+function getRootNode(secrets,root)
+{
+    var url = "https://one.ubuntu.com/api/file_storage/v1";
+    var xhr = oAuthRequest(url,secrets);
+    xhr.onreadystatechange = function() {
+                if(xhr.readyState===4) {
+                    if(xhr.status>=400||xhr.status===0) {
+                        console.log(xhr.status);
+                        root.onErr(xhr.status);
+                    } else {
+                        //console.log(xhr.responseText);
+                        var resp = eval('('+xhr.responseText+')');
+                        root.onRespRootNode(resp);
+                    }
+                }
+            }
+    xhr.send();
+}
+
 function getFileTree(secrets,root)
 {
     var url = "https://one.ubuntu.com/api/file_storage/v1";

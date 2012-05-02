@@ -12,12 +12,12 @@ Item {
 
     state: mouseArea.pressed && !root.disabled ? "pressed" : "unpressed"
 
-    //width: box.width
+    width: box.width
     height: box.height
 
     signal clicked(variant prop)
 
-    /*Rectangle {
+    Rectangle {
         id: shadow
         width: box.width
         height: box.height
@@ -25,68 +25,40 @@ Item {
         radius: 10
         x: Const.SHADOW_OFFSET;
         y: Const.SHADOW_OFFSET;
-    }*/
-
-    Rectangle {
-        id: box
-        color: Const.TRANSPARENT
-        height: label.height+3*Const.DEFAULT_MARGIN
-        width: root.width
     }
 
     Rectangle {
-        width: box.width-2*Const.TEXT_MARGIN+2*Const.DEFAULT_MARGIN
+        id: box
+        color: root.isDirectory ? "black" : "white"
+        height: label.height+20
+        width: label.width<=100 ? 120 : label.width+20
+        radius: 10
+    }
+
+    Rectangle {
+        width: box.width
         height: box.height
         x: box.x
         y: box.y
-        //color: root.isDirectory ? "white" : "black"
-        color: Const.DEFAULT_DIALOG_FOREGROUND_COLOR
-        anchors.verticalCenter: box.verticalCenter
-        anchors.horizontalCenter: box.horizontalCenter
-        opacity: 0.4
+        color: root.isDirectory ? "white" : "black"
+        opacity: 0.5
         radius: 10
         visible: mouseArea.pressed
     }
 
-    Image {
-        id: icon
-        width: 40
-        height: 40
-        x: Const.TEXT_MARGIN
-        source: root.isDirectory ? "../images/folder.png" : "../images/file-black.png"
-        sourceSize.width: width
-        sourceSize.height: height
-        anchors.verticalCenter: box.verticalCenter
-    }
-
     Text {
         id: label
-        x: Const.TEXT_MARGIN + icon.width + Const.DEFAULT_MARGIN
+        x: 10
+        y: 10
         font.pixelSize: 30
         color: root.isDirectory ? "white" : "black"
-        //color: "white"
-        elide: Text.ElideRight
+        elide: Text.ElideLeft
+        anchors.centerIn: box
         wrapMode: Text.Wrap
-        width: root.width-x-Const.TEXT_MARGIN-Const.DEFAULT_MARGIN-arrow.width
-
-        //width: root.width
-        anchors.verticalCenter: box.verticalCenter
-        /*onTextChanged: {
+        onTextChanged: {
             if(text.length>root.textMax)
                 root.name = text.substring(0,root.textMax-3)+"...";
-        }*/
-    }
-
-    Image {
-        id: arrow
-        width: 12
-        height: 20
-        anchors.right: box.right
-        anchors.margins: Const.TEXT_MARGIN
-        source: root.isDirectory ? "../images/arrow-frw.png" : "../images/arrow-frw-black.png"
-        sourceSize.width: width
-        sourceSize.height: height
-        anchors.verticalCenter: box.verticalCenter
+        }
     }
 
     MouseArea {
@@ -98,7 +70,7 @@ Item {
         }
     }
 
-    /*states: [
+    states: [
         State {
             name: "unpressed"
             PropertyChanges {target: shadow; x: Const.SHADOW_OFFSET}
@@ -113,5 +85,5 @@ Item {
             PropertyChanges {target: box; x: Const.SHADOW_OFFSET}
             PropertyChanges {target: box; y: Const.SHADOW_OFFSET}
         }
-    ]*/
+    ]
 }

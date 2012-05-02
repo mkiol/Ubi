@@ -1,7 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>translations/ubi.pl.qm</file>
-        <file>qml/ubi/About.qml</file>
         <file>qml/ubi/AccountPage.qml</file>
         <file>qml/ubi/bytesconv.js</file>
         <file>qml/ubi/DownloadArea.qml</file>
@@ -20,6 +18,9 @@
         <file>qml/ubi/TaskBar.qml</file>
         <file>qml/ubi/u1.js</file>
         <file>qml/ubi/UIConstants.js</file>
+        <file>qml/ubi/oauth/oauth.js</file>
+        <file>qml/ubi/oauth/README.txt</file>
+        <file>qml/ubi/oauth/sha1.js</file>
         <file>qml/ubi/components/Bar.qml</file>
         <file>qml/ubi/components/Button.qml</file>
         <file>qml/ubi/components/ButtonNew.qml</file>
@@ -36,13 +37,15 @@
         <file>qml/ubi/components/Spacer.qml</file>
         <file>qml/ubi/components/TextField.qml</file>
         <file>qml/ubi/components/ToolIcon.qml</file>
-        <file>qml/ubi/oauth/oauth.js</file>
-        <file>qml/ubi/oauth/README.txt</file>
-        <file>qml/ubi/oauth/sha1.js</file>
+        <file>qml/ubi/images/arrow-frw.png</file>
+        <file>qml/ubi/images/arrow-frw-black.png</file>
         <file>qml/ubi/images/back.png</file>
         <file>qml/ubi/images/close.png</file>
         <file>qml/ubi/images/down.png</file>
         <file>qml/ubi/images/download.png</file>
+        <file>qml/ubi/images/file.png</file>
+        <file>qml/ubi/images/file-black.png</file>
+        <file>qml/ubi/images/folder.png</file>
         <file>qml/ubi/images/menu.png</file>
         <file>qml/ubi/images/menu-arrow.png</file>
         <file>qml/ubi/images/menu-arrow-grey.png</file>
@@ -54,5 +57,7 @@
         <file>qml/ubi/images/ubi50.png</file>
         <file>qml/ubi/images/up.png</file>
         <file>qml/ubi/images/upload.png</file>
+        <file>translations/ubi.pl.qm</file>
+        <file>qml/ubi/components/FileOld.qml</file>
     </qresource>
 </RCC>

@@ -48,7 +48,7 @@ Rectangle {
 
     Rectangle {
         color: "black"
-        width: 2
+        width: 1
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.bottom: parent.bottom

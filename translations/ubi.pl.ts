@@ -31,6 +31,10 @@
         <source>Unable to connect!</source>
         <translation>Błąd połączenia!</translation>
     </message>
+    <message>
+        <source>Used:</source>
+        <translation>Wykorzystano:</translation>
+    </message>
 </context>
 <context>
     <name>DialogYesNo</name>
@@ -123,6 +127,10 @@
     <message>
         <source>Enter new folder name:</source>
         <translation>Podaj nową nazwę folderu:</translation>
+    </message>
+    <message>
+        <source>Folder is empty.</source>
+        <translation>Folder jest pusty.</translation>
     </message>
 </context>
 <context>

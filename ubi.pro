@@ -42,24 +42,24 @@ maemo5 {
 SOURCES += main.cpp \
     utils.cpp
 
-evil_hack_to_fool_lupdate {
-    SOURCES += \
-    qml/ubi/AccountPage.qml \
-    qml/ubi/DownloadArea.qml \
-    qml/ubi/FileSelector.qml \
-    qml/ubi/FilesPage.qml \
-    qml/ubi/LoginPage.qml \
-    qml/ubi/main.qml \
-    qml/ubi/PageStack.qml \
-    qml/ubi/PropertiesPage.qml \
-    qml/ubi/SettingsPage.qml \
-    qml/ubi/Shadow.qml \
-    qml/ubi/StartPage.qml \
-    qml/ubi/SystemBar.qml \
-    qml/ubi/TaskBar.qml \
-    qml/ubi/DownloadProgressBar.qml \
-    qml/ubi/components/DialogYesNo.qml
-}
+#evil_hack_to_fool_lupdate {
+#    SOURCES += \
+#    qml/ubi/AccountPage.qml \
+#    qml/ubi/DownloadArea.qml \
+#    qml/ubi/FileSelector.qml \
+#    qml/ubi/FilesPage.qml \
+#    qml/ubi/LoginPage.qml \
+#    qml/ubi/main.qml \
+#    qml/ubi/PageStack.qml \
+#    qml/ubi/PropertiesPage.qml \
+#    qml/ubi/SettingsPage.qml \
+#    qml/ubi/Shadow.qml \
+#    qml/ubi/StartPage.qml \
+#    qml/ubi/SystemBar.qml \
+#    qml/ubi/TaskBar.qml \
+#    qml/ubi/DownloadProgressBar.qml \
+#    qml/ubi/components/DialogYesNo.qml
+#}
 
 # Please do not modify the following two lines. Required for deployment.
 include(qmlapplicationviewer/qmlapplicationviewer.pri)
@@ -83,7 +83,7 @@ OTHER_FILES += \
 HEADERS += \
     utils.h
 
-TRANSLATIONS += translations/ubi.pl.ts
+#TRANSLATIONS += translations/ubi.pl.ts
 
 RESOURCES += \
     ubi.qrc

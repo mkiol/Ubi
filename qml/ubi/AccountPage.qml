@@ -34,6 +34,17 @@ Page {
         //nick.text = account.nickname;
         email.text = account.email;
         storage.text = Conv.bytesToSize(account.total_storage);
+
+        U1.getRootNode(secrets,root);
+    }
+
+    function onRespRootNode(resp)
+    {
+        //console.log("onResp");
+        mask.state = "idle";
+        var ubytes = Conv.bytesToSize(resp.used_bytes);
+        var uprec = Math.round((resp.used_bytes/resp.max_bytes)*100);
+        used.text = ubytes+" ("+uprec+"%)";
     }
 
     function onErr(status)
@@ -122,6 +133,21 @@ Page {
             }
             Text {
                 id: storage
+                font.pixelSize: 30
+                color: "black"
+                wrapMode: Text.Wrap
+                width: root.width - 6*Const.DEFAULT_MARGIN
+            }
+            Line {
+                width: root.width-2*Const.TEXT_MARGIN
+            }
+            Text {
+                font.pixelSize: 30
+                color: "white"
+                text: qsTr("Used:")
+            }
+            Text {
+                id: used
                 font.pixelSize: 30
                 color: "black"
                 wrapMode: Text.Wrap

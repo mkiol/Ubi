@@ -16,6 +16,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     Utils utils(&viewer,&settings);
 
     QString locale = settings.value("locale").toString();
+
     //qDebug() << "locale1=" << locale;
     if(locale!="pl_PL" && locale!="en_US") {
         locale = QLocale::system().name();

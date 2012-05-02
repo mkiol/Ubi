@@ -57,9 +57,9 @@ Item {
 
     onLabelChanged: {
         if(root.label.length>root.maxSize) {
-            console.log("root.label: "+root.label)
-            console.log("root.label.length: "+root.label.length)
-            console.log("root.maxSize: "+root.maxSize)
+            //console.log("root.label: "+root.label)
+            //console.log("root.label.length: "+root.label.length)
+            //console.log("root.maxSize: "+root.maxSize)
             textbox.text = root.label.substring(0,root.maxSize-3)+"...";
         } else {
             textbox.text = root.label;

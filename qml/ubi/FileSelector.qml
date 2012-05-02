@@ -161,7 +161,7 @@ Item {
                     color: Const.TRANSPARENT
                     visible: root.folderOnly? folderModel.isFolder(index) : true
 
-                    File {
+                    FileOld {
                         id: file
                         anchors.verticalCenter: parent.verticalCenter
                         name: fileName

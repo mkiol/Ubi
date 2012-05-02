@@ -155,6 +155,8 @@ Page {
             }
             object.isDirectory = nodes[i].kind == "directory";
             object.properties = nodes[i];
+            object.width = root.width;
+            //object.height = 50;
             if(object.isDirectory) {
                 object.clicked.connect(function(prop) {
                             pageStack.push("FilesPage.qml");
@@ -170,6 +172,10 @@ Page {
         if(mask.state!="defocused") {
             mask.state = "idle";
         }
+
+        if(files.children.length==0) {
+            empty.visible = true;
+        }
     }
 
     Connections {
@@ -182,25 +188,28 @@ Page {
         width: parent.width
         height: parent.height
         contentHeight: files.height+Const.SYSTEM_BAR_HEIGHT+2*Const.TEXT_MARGIN
-        y: Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
+        //y: Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
+        y: Const.SYSTEM_BAR_HEIGHT+Const.DEFAULT_MARGIN
         contentWidth: parent.width
 
         Column {
             id: files
-            spacing: Const.DEFAULT_MARGIN
-            x: Const.TEXT_MARGIN
+            //spacing: Const.DEFAULT_MARGIN
+            //x: Const.TEXT_MARGIN
             add: Transition {
                 NumberAnimation { properties: "opacity"; easing.type: Easing.InOutQuad }
             }
-
-            /*Text {
-                font.pixelSize: Const.DEFAULT_FONT_PIXEL_SIZE
-                color: Const.DEFAULT_FOREGROUND_COLOR
-                text: "Empty"
-                font.italic: true
-                visible: files.children.length==1
-            }*/
         }
+    }
+
+    Text {
+        id: empty
+        font.pixelSize: Const.DEFAULT_FONT_PIXEL_SIZE
+        color: Const.DEFAULT_FOREGROUND_COLOR
+        text: qsTr("Folder is empty.")
+        anchors.centerIn: parent
+        font.italic: true
+        visible: false
     }
 
     FileSelector {
