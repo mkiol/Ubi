@@ -1,11 +1,12 @@
 import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import "../UIConstants.js" as Const
 
-
 Item {
     id: root
     property alias name: label.text
+    property alias description: details.text
     property bool isDirectory: false
+    property bool isPhoto: false
     property variant properties: null
     property string filename: ""
     property int textMax: 27
@@ -30,30 +31,44 @@ Item {
     Rectangle {
         id: box
         color: Const.TRANSPARENT
-        height: label.height+3*Const.DEFAULT_MARGIN
+        height: label.height+5*Const.DEFAULT_MARGIN
         width: root.width
     }
 
+    /*Rectangle {
+        color: Const.DEFAULT_FOREGROUND_COLOR
+        height: 1
+        anchors.bottom: box.bottom;
+        anchors.left: box.left;
+        anchors.right: box.right;
+    }*/
+
     Rectangle {
+        id: boxShadow
         width: box.width-2*Const.TEXT_MARGIN+2*Const.DEFAULT_MARGIN
         height: box.height
-        x: box.x
-        y: box.y
+        y: 5
         //color: root.isDirectory ? "white" : "black"
         color: Const.DEFAULT_DIALOG_FOREGROUND_COLOR
-        anchors.verticalCenter: box.verticalCenter
+        //anchors.verticalCenter: box.verticalCenter
         anchors.horizontalCenter: box.horizontalCenter
         opacity: 0.4
         radius: 10
         visible: mouseArea.pressed
     }
+    /*Line {
+        width: boxShadow.width
+        anchors.bottom: boxShadow.bottom
+        anchors.horizontalCenter: box.horizontalCenter
+    }*/
+
 
     Image {
         id: icon
-        width: 40
-        height: 40
-        x: Const.TEXT_MARGIN
-        source: root.isDirectory ? "../images/folder.png" : "../images/file-black.png"
+        width: 50
+        height: 50
+        x: Const.TEXT_MARGIN-5
+        source: root.isDirectory ? "../images/folder.png" : root.isPhoto ? "../images/photo.png" : "../images/document.png"
         sourceSize.width: width
         sourceSize.height: height
         anchors.verticalCenter: box.verticalCenter
@@ -61,29 +76,35 @@ Item {
 
     Text {
         id: label
-        x: Const.TEXT_MARGIN + icon.width + Const.DEFAULT_MARGIN
+        x: Const.TEXT_MARGIN + icon.width + 2*Const.DEFAULT_MARGIN
         font.pixelSize: 30
-        color: root.isDirectory ? "white" : "black"
-        //color: "white"
+        color: Const.DEFAULT_FOREGROUND_COLOR
         elide: Text.ElideRight
         wrapMode: Text.Wrap
-        width: root.width-x-Const.TEXT_MARGIN-Const.DEFAULT_MARGIN-arrow.width
-
-        //width: root.width
+        width: root.width-x-Const.TEXT_MARGIN-2*Const.DEFAULT_MARGIN-arrow.width
         anchors.verticalCenter: box.verticalCenter
-        /*onTextChanged: {
-            if(text.length>root.textMax)
-                root.name = text.substring(0,root.textMax-3)+"...";
-        }*/
+    }
+
+    Text {
+        id: details
+        x: Const.TEXT_MARGIN + icon.width + 2*Const.DEFAULT_MARGIN
+        font.pixelSize: 20
+        font.italic: true
+        color: "black"
+        elide: Text.ElideRight
+        wrapMode: Text.Wrap
+        width: root.width-x-Const.TEXT_MARGIN-2*Const.DEFAULT_MARGIN-arrow.width
+        //anchors.bottom: boxShadow.bottom
+        y: box.height-height
     }
 
     Image {
         id: arrow
-        width: 12
-        height: 20
+        width: 30
+        height: 30
         anchors.right: box.right
         anchors.margins: Const.TEXT_MARGIN
-        source: root.isDirectory ? "../images/arrow-frw.png" : "../images/arrow-frw-black.png"
+        source: "../images/next.png"
         sourceSize.width: width
         sourceSize.height: height
         anchors.verticalCenter: box.verticalCenter

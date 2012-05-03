@@ -130,7 +130,11 @@
     </message>
     <message>
         <source>Folder is empty.</source>
-        <translation>Folder jest pusty.</translation>
+        <translation type="obsolete">Folder jest pusty.</translation>
+    </message>
+    <message>
+        <source>Empty</source>
+        <translation>Pusty</translation>
     </message>
 </context>
 <context>

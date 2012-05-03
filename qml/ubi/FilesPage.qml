@@ -2,6 +2,7 @@ import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import "components"
 import Qt 4.7
 import "u1.js" as U1
+import "bytesconv.js" as Conv
 import "UIConstants.js" as Const
 
 Page {
@@ -146,7 +147,7 @@ Page {
         for (i=0; i<l; i++) {
             var object = component.createObject(files);
             var ind = nodes[i].path.lastIndexOf("/");
-            object.textMax = root.width/17;
+            //object.textMax = root.width/17;
             //console.log("ind="+ind);
             if(ind>=0) {
                 object.name = nodes[i].path.substr(ind+1);
@@ -158,15 +159,30 @@ Page {
             object.width = root.width;
             //object.height = 50;
             if(object.isDirectory) {
+                /*if(!nodes[i].has_children) {
+                    object.description = "Empty";
+                }*/
                 object.clicked.connect(function(prop) {
                             pageStack.push("FilesPage.qml");
                             pageStack.currentPage.init(prop);
                         });
             } else {
+                var txt = "" + Conv.bytesToSize(nodes[i].size);
+                object.description = txt;
                 object.clicked.connect(function(prop) {
                             pageStack.push("PropertiesPage.qml");
                             pageStack.currentPage.init(prop);
                         });
+
+                ind = object.name.lastIndexOf(".");
+                var ext = "";
+                if(ind>=0) ext = object.name.substr(ind+1);
+                if(ext=="jpg" || ext=="JPG" || ext=="Jpg" ||
+                   ext=="jpeg" || ext=="JPEG" || ext=="Jpeg" ||
+                   ext=="gif" || ext=="GIF" || ext=="Gif" ||
+                   ext=="png" || ext=="PNG" || ext=="Png") {
+                    object.isPhoto = true;
+                }
             }
         }
         if(mask.state!="defocused") {
@@ -175,6 +191,8 @@ Page {
 
         if(files.children.length==0) {
             empty.visible = true;
+        } else {
+            empty.visible = false;
         }
     }
 
@@ -206,7 +224,7 @@ Page {
         id: empty
         font.pixelSize: Const.DEFAULT_FONT_PIXEL_SIZE
         color: Const.DEFAULT_FOREGROUND_COLOR
-        text: qsTr("Folder is empty.")
+        text: qsTr("Empty")
         anchors.centerIn: parent
         font.italic: true
         visible: false

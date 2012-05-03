@@ -111,6 +111,6 @@ Page {
         anchors.horizontalCenter: parent.horizontalCenter
         font.pixelSize: 18
         color: "white"
-        text: "ver. 0.9.1-1"
+        text: "ver. 0.9.1-2"
     }
 }

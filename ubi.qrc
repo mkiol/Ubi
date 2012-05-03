@@ -30,6 +30,7 @@
         <file>qml/ubi/components/DialogInput.qml</file>
         <file>qml/ubi/components/DialogYesNo.qml</file>
         <file>qml/ubi/components/File.qml</file>
+        <file>qml/ubi/components/FileOld.qml</file>
         <file>qml/ubi/components/Line.qml</file>
         <file>qml/ubi/components/Mask.qml</file>
         <file>qml/ubi/components/Notification.qml</file>
@@ -37,27 +38,23 @@
         <file>qml/ubi/components/Spacer.qml</file>
         <file>qml/ubi/components/TextField.qml</file>
         <file>qml/ubi/components/ToolIcon.qml</file>
-        <file>qml/ubi/images/arrow-frw.png</file>
-        <file>qml/ubi/images/arrow-frw-black.png</file>
         <file>qml/ubi/images/back.png</file>
         <file>qml/ubi/images/close.png</file>
+        <file>qml/ubi/images/document.png</file>
         <file>qml/ubi/images/down.png</file>
         <file>qml/ubi/images/download.png</file>
-        <file>qml/ubi/images/file.png</file>
-        <file>qml/ubi/images/file-black.png</file>
         <file>qml/ubi/images/folder.png</file>
-        <file>qml/ubi/images/menu.png</file>
         <file>qml/ubi/images/menu-arrow.png</file>
         <file>qml/ubi/images/menu-arrow-grey.png</file>
         <file>qml/ubi/images/menu-arrow-orange.png</file>
         <file>qml/ubi/images/minimize.png</file>
+        <file>qml/ubi/images/next.png</file>
+        <file>qml/ubi/images/photo.png</file>
         <file>qml/ubi/images/progress.png</file>
         <file>qml/ubi/images/progress-small.png</file>
-        <file>qml/ubi/images/refresh.png</file>
         <file>qml/ubi/images/ubi50.png</file>
         <file>qml/ubi/images/up.png</file>
         <file>qml/ubi/images/upload.png</file>
         <file>translations/ubi.pl.qm</file>
-        <file>qml/ubi/components/FileOld.qml</file>
     </qresource>
 </RCC>

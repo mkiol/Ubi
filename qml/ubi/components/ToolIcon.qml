@@ -24,7 +24,6 @@ Item {
 
     Image {
         id: icon
-
         width: 40
         height: 40
         anchors.centerIn: parent

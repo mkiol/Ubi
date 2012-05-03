@@ -79,6 +79,11 @@ Item {
             spacing: Const.DEFAULT_MARGIN
         }
 
+        Line {
+            width: root.width-3*Const.DEFAULT_MARGIN
+            anchors.horizontalCenter: parent.horizontalCenter
+            visible: progressArea.count>0
+        }
         Spacer {
             visible: progressArea.count>0
         }

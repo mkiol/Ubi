@@ -107,7 +107,7 @@ Item {
 
                     Button {
                         id: currentFolderButton
-                        maxSize: 13
+                        maxSize: 12
                         label: fixPath(folderModel.folder)
                         width: pathController.width-folderUpButton.width-cancelButton.width-4*Const.DEFAULT_MARGIN
                         onButtonClicked: root.folderSelected(folderModel.folder)
@@ -167,7 +167,7 @@ Item {
                         name: fileName
                         filename: fileName
                         isDirectory: folderModel.isFolder(index)
-                        textMax: root.width/17
+                        textMax: root.width/18
                         onClicked: {
                             if(isDirectory)
                                 fileSelector.setFolder(filePath);
