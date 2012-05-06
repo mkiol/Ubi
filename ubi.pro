@@ -1,18 +1,18 @@
 # Add more folders to ship with the application, here
-#folder_01.source = qml/ubi
-#folder_01.target = qml
-#DEPLOYMENTFOLDERS = folder_01
+folder_01.source = qml/ubi
+folder_01.target = qml
+DEPLOYMENTFOLDERS = folder_01
 
-#folder_02.source = translations/ubi.pl.qm
-#folder_02.target = translations
-#DEPLOYMENTFOLDERS += folder_02
+folder_02.source = translations/ubi.pl.qm
+folder_02.target = translations
+DEPLOYMENTFOLDERS += folder_02
 
 # Additional import path used to resolve QML modules in Creator's code model
 QML_IMPORT_PATH =
 
 symbian:TARGET.UID3 = 0xE6DE55DD
 
-# Smart Installer package's UID
+# Smart Installer package's UI
 # This UID is from the protected range and therefore the package will
 # fail to install if self-signed. By default qmake uses the unprotected
 # range value if unprotected UID is defined for the application and
@@ -42,24 +42,8 @@ maemo5 {
 SOURCES += main.cpp \
     utils.cpp
 
-evil_hack_to_fool_lupdate {
-    SOURCES += \
-    qml/ubi/AccountPage.qml \
-    qml/ubi/DownloadArea.qml \
-    qml/ubi/FileSelector.qml \
-    qml/ubi/FilesPage.qml \
-    qml/ubi/LoginPage.qml \
-    qml/ubi/main.qml \
-    qml/ubi/PageStack.qml \
-    qml/ubi/PropertiesPage.qml \
-    qml/ubi/SettingsPage.qml \
-    qml/ubi/Shadow.qml \
-    qml/ubi/StartPage.qml \
-    qml/ubi/SystemBar.qml \
-    qml/ubi/TaskBar.qml \
-    qml/ubi/DownloadProgressBar.qml \
-    qml/ubi/components/DialogYesNo.qml
-}
+# evil_hack_to_fool_lupdate
+#include(translation.pri)
 
 # Please do not modify the following two lines. Required for deployment.
 include(qmlapplicationviewer/qmlapplicationviewer.pri)
@@ -78,7 +62,8 @@ OTHER_FILES += \
     qtc_packaging/debian_harmattan/copyright \
     qtc_packaging/debian_harmattan/control \
     qtc_packaging/debian_harmattan/compat \
-    qtc_packaging/debian_harmattan/changelog
+    qtc_packaging/debian_harmattan/changelog \
+    translation.pri
 
 HEADERS += \
     utils.h

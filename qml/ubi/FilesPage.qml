@@ -169,6 +169,7 @@ Page {
             } else {
                 var txt = "" + Conv.bytesToSize(nodes[i].size);
                 object.description = txt;
+                object.isPublic = nodes[i].is_public;
                 object.clicked.connect(function(prop) {
                             pageStack.push("PropertiesPage.qml");
                             pageStack.currentPage.init(prop);

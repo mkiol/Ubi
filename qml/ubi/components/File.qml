@@ -7,13 +7,14 @@ Item {
     property alias description: details.text
     property bool isDirectory: false
     property bool isPhoto: false
+    property bool isPublic: false
     property variant properties: null
     property string filename: ""
     property int textMax: 27
 
     state: mouseArea.pressed && !root.disabled ? "pressed" : "unpressed"
 
-    //width: box.width
+    //width: parent.width
     height: box.height
 
     signal clicked(variant prop)
@@ -31,7 +32,7 @@ Item {
     Rectangle {
         id: box
         color: Const.TRANSPARENT
-        height: label.height+5*Const.DEFAULT_MARGIN
+        height: label.height+4*Const.DEFAULT_MARGIN
         width: root.width
     }
 
@@ -45,7 +46,8 @@ Item {
 
     Rectangle {
         id: boxShadow
-        width: box.width-2*Const.TEXT_MARGIN+2*Const.DEFAULT_MARGIN
+        //width: box.width-2*Const.TEXT_MARGIN+2*Const.DEFAULT_MARGIN
+        width: box.width
         height: box.height
         y: 5
         //color: root.isDirectory ? "white" : "black"
@@ -53,11 +55,12 @@ Item {
         //anchors.verticalCenter: box.verticalCenter
         anchors.horizontalCenter: box.horizontalCenter
         opacity: 0.4
-        radius: 10
+        //radius: 10
         visible: mouseArea.pressed
     }
+
     /*Line {
-        width: boxShadow.width
+        width: box.width-2*Const.TEXT_MARGIN
         anchors.bottom: boxShadow.bottom
         anchors.horizontalCenter: box.horizontalCenter
     }*/
@@ -68,7 +71,9 @@ Item {
         width: 50
         height: 50
         x: Const.TEXT_MARGIN-5
-        source: root.isDirectory ? "../images/folder.png" : root.isPhoto ? "../images/photo.png" : "../images/document.png"
+        source: root.isDirectory ? "../images/folder.png" :
+                                   root.isPhoto ? "../images/photo.png" :
+                                                  "../images/document.png"
         sourceSize.width: width
         sourceSize.height: height
         anchors.verticalCenter: box.verticalCenter
@@ -81,21 +86,35 @@ Item {
         color: Const.DEFAULT_FOREGROUND_COLOR
         elide: Text.ElideRight
         wrapMode: Text.Wrap
-        width: root.width-x-Const.TEXT_MARGIN-2*Const.DEFAULT_MARGIN-arrow.width
+        width: root.isPublic ?
+                   root.width-x-Const.TEXT_MARGIN-3*Const.DEFAULT_MARGIN-arrow.width-publicIcon.width :
+                   root.width-x-Const.TEXT_MARGIN-1*Const.DEFAULT_MARGIN-arrow.width
         anchors.verticalCenter: box.verticalCenter
     }
 
     Text {
         id: details
         x: Const.TEXT_MARGIN + icon.width + 2*Const.DEFAULT_MARGIN
-        font.pixelSize: 20
+        font.pixelSize: 18
         font.italic: true
         color: "black"
         elide: Text.ElideRight
         wrapMode: Text.Wrap
         width: root.width-x-Const.TEXT_MARGIN-2*Const.DEFAULT_MARGIN-arrow.width
-        //anchors.bottom: boxShadow.bottom
-        y: box.height-height
+        y: box.height-height+3
+    }
+
+    Image {
+        id: publicIcon
+        width: 50
+        height: 50
+        anchors.right: arrow.left
+        anchors.margins: Const.DEFAULT_MARGIN
+        source: "../images/internet.png"
+        sourceSize.width: width
+        sourceSize.height: height
+        anchors.verticalCenter: box.verticalCenter
+        visible: root.isPublic
     }
 
     Image {

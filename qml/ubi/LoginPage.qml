@@ -1,41 +1,12 @@
 import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import "components"
 import "u1.js" as U1
+import "UIConstants.js" as Const
 
 Page {
     id: root
     title: qsTr("Login")
     orientation: "auto"
-
-    Column {
-        id: column
-        anchors.centerIn: parent
-        spacing: 20
-
-        Text {
-            font.pixelSize: 30
-            color: "white"
-            text: qsTr("Ubuntu One sign in:")
-        }
-
-        TextField {
-            id: user
-            placeholderText: qsTr("User ID")
-            width: 400
-        }
-
-        TextField {
-            id: pass
-            width: 400
-            placeholderText: qsTr("Password")
-            echoMode: TextInput.Password
-        }
-
-        Button {
-            label: qsTr("Save")
-            onButtonClicked: root.getToken()
-        }
-    }
 
     function getToken() {
         mask.state = "busy";
@@ -63,6 +34,47 @@ Page {
             tip.show(qsTr("Unable to connect!"));
         } else {
             tip.show(qsTr("Error: ")+status);
+        }
+    }
+
+    Flickable {
+        width: root.width
+        height: root.height
+        contentHeight: content.height+Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
+        y: Const.SYSTEM_BAR_HEIGHT+2*Const.TEXT_MARGIN
+
+        Column {
+            id: content
+            spacing: Const.DEFAULT_MARGIN
+            x: Const.TEXT_MARGIN
+
+            Text {
+                font.pixelSize: 30
+                color: "white"
+                text: qsTr("Ubuntu One sign in:")
+            }
+
+            Spacer {}
+
+            TextField {
+                id: user
+                placeholderText: qsTr("User ID")
+                width: 400
+            }
+
+            TextField {
+                id: pass
+                width: 400
+                placeholderText: qsTr("Password")
+                echoMode: TextInput.Password
+            }
+
+            Spacer {}
+
+            Button {
+                label: qsTr("Save")
+                onButtonClicked: root.getToken()
+            }
         }
     }
 }

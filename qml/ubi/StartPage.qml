@@ -7,16 +7,16 @@ Page {
     id: root
     title: "Ubi"
 
-    Component.onCompleted: init()
+    //Component.onCompleted: init()
 
-    function init() {
+    /*function init() {
         if(Utils.isAuthorized()) {
             //title = "Hi, "+Utils.name();
         } else {
             console.log("not authorized!");
             pageStack.initialPage = "LoginPage.qml";
         }
-    }
+    }*/
 
     menu: [
         [qsTr("About Ubi"),false]
@@ -45,8 +45,9 @@ Page {
         Spacer{}
 
         ButtonNew {
-            height: 100; width: 200
+            height: 100; width: 250
             label: qsTr("Files")
+            //iconSource: "images/files.png"
             anchors.horizontalCenter: parent.horizontalCenter
             onButtonClicked: {
                 pageStack.push("FilesPage.qml");
@@ -64,16 +65,18 @@ Page {
         }*/
 
         ButtonNew {
-            height: 100; width: 200
+            height: 100; width: 250
             label: qsTr("Account")
+            //iconSource: "images/account.png"
             anchors.horizontalCenter: parent.horizontalCenter
             onButtonClicked: {
                 pageStack.push("AccountPage.qml");
             }
         }
         ButtonNew {
-            height: 100; width: 200
+            height: 100; width: 250
             label: qsTr("Settings")
+            //iconSource: "images/settings.png"
             anchors.horizontalCenter: parent.horizontalCenter
             onButtonClicked: pageStack.push("SettingsPage.qml");
         }
@@ -102,15 +105,5 @@ Page {
 
         onOpened: mask.state = "dialog"
         onCanceled: mask.state = "idle"
-    }
-
-
-    Text {
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 10
-        anchors.horizontalCenter: parent.horizontalCenter
-        font.pixelSize: 18
-        color: "white"
-        text: "ver. 0.9.1-2"
     }
 }

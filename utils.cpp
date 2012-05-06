@@ -6,6 +6,7 @@ Utils::Utils(QmlApplicationViewer *viewer, QSettings *settings, QObject *parent)
 {
     _viewer = viewer;
     _settings = settings;
+    _clipboard = QApplication::clipboard();
 
     _nam = new QNetworkAccessManager(this);
     isFinished = true;
@@ -379,4 +380,10 @@ void Utils::deleteFinished()
 
     temp_reply->close();
     temp_reply->deleteLater();
+}
+
+void Utils::setClipboardText(const QString &text)
+{
+    _clipboard->setText(text, QClipboard::Clipboard);
+    _clipboard->setText(text, QClipboard::Selection);
 }

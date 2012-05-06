@@ -250,6 +250,38 @@
         <source>Enter new file name:</source>
         <translation>Podaj nową nazwę pliku:</translation>
     </message>
+    <message>
+        <source>Publish</source>
+        <translation>Upublicznij</translation>
+    </message>
+    <message>
+        <source>Publishing stopped!</source>
+        <translation>Upublicznianie wyłączone!</translation>
+    </message>
+    <message>
+        <source>Publishing started!</source>
+        <translation>Upublicznianie włączone!</translation>
+    </message>
+    <message>
+        <source>Public URL:</source>
+        <translation>Publiczny URL:</translation>
+    </message>
+    <message>
+        <source>Public URL copied to clipboard!</source>
+        <translation>Publiczny URL skopiowany!</translation>
+    </message>
+    <message>
+        <source>Stop publishing?</source>
+        <translation>Wyłączyć upublicznianie?</translation>
+    </message>
+    <message>
+        <source>Start publishing?</source>
+        <translation>Włączyć upublicznianie?</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Skopiuj</translation>
+    </message>
 </context>
 <context>
     <name>SettingsPage</name>

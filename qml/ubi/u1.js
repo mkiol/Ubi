@@ -155,7 +155,7 @@ function getRootNode(secrets,root)
     xhr.onreadystatechange = function() {
                 if(xhr.readyState===4) {
                     if(xhr.status>=400||xhr.status===0) {
-                        console.log(xhr.status);
+                        //console.log(xhr.status);
                         root.onErr(xhr.status);
                     } else {
                         //console.log(xhr.responseText);
@@ -174,7 +174,7 @@ function getFileTree(secrets,root)
     xhr.onreadystatechange = function() {
                 if(xhr.readyState===4) {
                     if(xhr.status>=400||xhr.status===0) {
-                        console.log(xhr.status);
+                        //console.log(xhr.status);
                         root.onErr(xhr.status);
                     } else {
                         //console.log(xhr.responseText);
@@ -214,6 +214,54 @@ function renameFile(secrets,resourcePath,targetPath,root)
                 }
             }
 
+    xhr.send(body);
+}
+
+function stopPublishing(secrets,resourcePath,root)
+{
+    var url = "https://one.ubuntu.com/api/file_storage/v1"+encodeURI(resourcePath);
+    var xhr = oAuthRequest(url,secrets,"PUT");
+    xhr.setRequestHeader("Content-Type","application/json");
+    var body = '{"is_public":false}';
+    xhr.onreadystatechange = function() {
+                if(xhr.readyState===4) {
+                    if(xhr.status>=400||xhr.status===0) {
+                        //console.log("status: "+xhr.status);
+                        //console.log(xhr.responseText);
+                        root.onErrStopPublishing(xhr.status);
+                    } else {
+                        //console.log("status: "+xhr.status);
+                        //console.log(xhr.responseText);
+                        var resp = eval('('+xhr.responseText+')');
+                        //console.log(resp);
+                        root.onRespStopPublishing(resp);
+                    }
+                }
+            }
+    xhr.send(body);
+}
+
+function startPublishing(secrets,resourcePath,root)
+{
+    var url = "https://one.ubuntu.com/api/file_storage/v1"+encodeURI(resourcePath);
+    var xhr = oAuthRequest(url,secrets,"PUT");
+    xhr.setRequestHeader("Content-Type","application/json");
+    var body = '{"is_public":true}';
+    xhr.onreadystatechange = function() {
+                if(xhr.readyState===4) {
+                    if(xhr.status>=400||xhr.status===0) {
+                        //console.log("status: "+xhr.status);
+                        //console.log(xhr.responseText);
+                        root.onErrStartPublishing(xhr.status);
+                    } else {
+                        //console.log("status: "+xhr.status);
+                        //console.log(xhr.responseText);
+                        var resp = eval('('+xhr.responseText+')');
+                        //console.log(resp);
+                        root.onRespStartPublishing(resp);
+                    }
+                }
+            }
     xhr.send(body);
 }
 

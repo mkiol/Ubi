@@ -11,9 +11,11 @@ Page {
 
     property variant secrets
     property variant properties
+    property bool isPublic
 
     menu: [
         [qsTr("Download"),false],
+        [qsTr("Publish"),false],
         [qsTr("Rename"),false],
         [qsTr("Delete"),false]
     ]
@@ -21,6 +23,13 @@ Page {
     function menuFun(id) {
         if(id==qsTr("Download")) {
             fileSelector.state = "visible";
+        }
+        if(id==qsTr("Publish")) {
+            if(isPublic) {
+                dialogStopPublish.open();
+            } else {
+                dialogStartPublish.open();
+            }
         }
         if(id==qsTr("Rename")) {
             dialogRename.open();
@@ -66,16 +75,37 @@ Page {
             created.text = Qt.formatDateTime(crd, "d/M/yyyy h:mm");
             changed.text = Qt.formatDateTime(chd, "d/M/yyyy h:mm");
             size.text = Conv.bytesToSize(prop.size);
+            if(prop && prop.is_public) {
+                url.text = prop.public_url;
+            }
+
         } else {
             tip.show(qsTr("Internal error!"));
         }
         root.properties = prop;
+        if(root.properties && root.properties.is_public) {
+            root.isPublic = true;
+        } else {
+            root.isPublic = false;
+        }
     }
 
     function setContentType(type)
     {
         //ctype.text = type;
         //ctype.font.italic = false;
+    }
+
+    function onErr(status)
+    {
+        mask.state = "idle";
+        if(status==401) {
+            tip.show(qsTr("Authorization failed!"));
+        } else if(status==0) {
+            tip.show(qsTr("Unable to connect!"));
+        } else {
+            tip.show(qsTr("Error: ")+status);
+        }
     }
 
     function onRespRename(prop)
@@ -88,15 +118,33 @@ Page {
 
     function onErrRename(status)
     {
-        //console.log("onErrRename");
+        onErr(status);
+    }
+
+    function onRespStopPublishing(prop)
+    {
+        //console.log("onRespStopPublishing");
         mask.state = "idle";
-        if(status==401) {
-            tip.show(qsTr("Authorization failed!"));
-        } else if(status==0) {
-            tip.show(qsTr("Unable to connect!"));
-        } else {
-            tip.show(qsTr("Error: ")+status);
-        }
+        init(prop); pageStack.prevPage().init();
+        tip.show(qsTr("Publishing stopped!"));
+    }
+
+    function onErrStopPublishing(status)
+    {
+        onErr(status);
+    }
+
+    function onRespStartPublishing(prop)
+    {
+        //console.log("onRespStartPublishing");
+        mask.state = "idle";
+        init(prop); pageStack.prevPage().init();
+        tip.show(qsTr("Publishing started!"));
+    }
+
+    function onErrStartPublishing(status)
+    {
+        onErr(status);
     }
 
     Flickable {
@@ -162,6 +210,34 @@ Page {
                 font.pixelSize: 30
                 color: "black"
             }
+            Line {
+                width: root.width-2*Const.TEXT_MARGIN
+                visible: root.isPublic
+            }
+            Text {
+                font.pixelSize: 30
+                color: "white"
+                text: qsTr("Public URL:")
+                visible: root.isPublic
+            }
+            Text {
+                id: url
+                font.pixelSize: 30
+                color: "black"
+                wrapMode: Text.Wrap
+                width: root.width - 6*Const.DEFAULT_MARGIN
+                visible: root.isPublic
+            }
+            Button {
+                label: qsTr("Copy")
+                fontSize: 25
+                visible: root.isPublic
+                onButtonClicked: {
+                    Utils.setClipboardText(url.text);
+                    tip.show(qsTr("Public URL copied to clipboard!"));
+                }
+            }
+
             /*Text {
                 font.pixelSize: 30
                 color: "white"
@@ -202,6 +278,38 @@ Page {
             if(ok) {
                 mask.state = "busy";
                 U1.deleteFile(secrets,properties.resource_path,root,Utils);
+            }
+        }
+        onCanceled: mask.state = "idle"
+    }
+
+    DialogYesNo {
+        id: dialogStopPublish
+        z: 200
+        text: qsTr("Stop publishing?")
+        onOpened: mask.state = "dialog"
+        onClosed: {
+            mask.state = "idle";
+            if(ok) {
+                mask.state = "busy";
+                var currentPath = root.properties.resource_path;
+                U1.stopPublishing(root.secrets,currentPath,root);
+            }
+        }
+        onCanceled: mask.state = "idle"
+    }
+
+    DialogYesNo {
+        id: dialogStartPublish
+        z: 200
+        text: qsTr("Start publishing?")
+        onOpened: mask.state = "dialog"
+        onClosed: {
+            mask.state = "idle";
+            if(ok) {
+                mask.state = "busy";
+                var currentPath = root.properties.resource_path;
+                U1.startPublishing(root.secrets,currentPath,root);
             }
         }
         onCanceled: mask.state = "idle"

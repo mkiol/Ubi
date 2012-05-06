@@ -12,8 +12,6 @@ Item {
 
     signal clicked()
 
-
-
     Rectangle {
         width: parent.width
         height: Const.SYSTEM_BAR_HEIGHT

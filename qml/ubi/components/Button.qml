@@ -5,6 +5,7 @@ Item {
     id: root
     property string label
     property bool disabled: false
+    property int fontSize: 30
     property int maxSize: 27
     property string iconSource
 
@@ -68,7 +69,7 @@ Item {
         id: textbox
         //x: 10
         //y: 10
-        font.pixelSize: 30
+        font.pixelSize: root.fontSize
         color: root.disabled ? "gray" : "white"
         anchors.centerIn: box
         visible: root.iconSource == ""

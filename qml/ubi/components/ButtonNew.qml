@@ -45,16 +45,6 @@ Item {
         //border.width: Const.SHADOW_OFFSET
     }
 
-    Image {
-        id: icon
-        width: 40
-        height: 40
-        anchors.centerIn: box
-        source: root.iconSource == "" ? "" : "../" + root.iconSource
-        sourceSize.width: width
-        sourceSize.height: height
-    }
-
     onLabelChanged: {
         if(root.label.length>root.maxSize) {
             //console.log("root.label: "+root.label)
@@ -66,14 +56,26 @@ Item {
         }
     }
 
-    Text {
-        id: textbox
-        //x: 10
-        //y: 10
-        font.pixelSize: 30
-        color: root.disabled ? "gray" : "white"
+    Row {
         anchors.centerIn: box
-        visible: root.iconSource == ""
+        spacing: Const.DEFAULT_MARGIN
+        Image {
+            id: icon
+            width: 40
+            height: 40
+            source: root.iconSource == "" ? "" : "../" + root.iconSource
+            sourceSize.width: width
+            sourceSize.height: height
+            visible: root.iconSource!=""
+        }
+
+        Text {
+            id: textbox
+            //x: 10
+            //y: 10
+            font.pixelSize: 30
+            color: root.disabled ? "gray" : "white"
+        }
     }
 
     MouseArea {

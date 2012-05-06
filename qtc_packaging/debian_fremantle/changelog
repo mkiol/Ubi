@@ -1,3 +1,9 @@
+ubi (0.9.2-1) unstable; urgency=low
+
+  * Added "publishing" feature
+
+ -- Michal Kosciesza <mkiol@o2.pl>  Sat, 05 May 2012 14:56:55 +0200
+
 ubi (0.9.1-2) unstable; urgency=low
 
   * New icons

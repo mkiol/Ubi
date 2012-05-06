@@ -18,9 +18,6 @@
         <file>qml/ubi/TaskBar.qml</file>
         <file>qml/ubi/u1.js</file>
         <file>qml/ubi/UIConstants.js</file>
-        <file>qml/ubi/oauth/oauth.js</file>
-        <file>qml/ubi/oauth/README.txt</file>
-        <file>qml/ubi/oauth/sha1.js</file>
         <file>qml/ubi/components/Bar.qml</file>
         <file>qml/ubi/components/Button.qml</file>
         <file>qml/ubi/components/ButtonNew.qml</file>
@@ -38,12 +35,15 @@
         <file>qml/ubi/components/Spacer.qml</file>
         <file>qml/ubi/components/TextField.qml</file>
         <file>qml/ubi/components/ToolIcon.qml</file>
+        <file>qml/ubi/images/account.png</file>
         <file>qml/ubi/images/back.png</file>
         <file>qml/ubi/images/close.png</file>
         <file>qml/ubi/images/document.png</file>
         <file>qml/ubi/images/down.png</file>
         <file>qml/ubi/images/download.png</file>
+        <file>qml/ubi/images/files.png</file>
         <file>qml/ubi/images/folder.png</file>
+        <file>qml/ubi/images/internet.png</file>
         <file>qml/ubi/images/menu-arrow.png</file>
         <file>qml/ubi/images/menu-arrow-grey.png</file>
         <file>qml/ubi/images/menu-arrow-orange.png</file>
@@ -52,9 +52,14 @@
         <file>qml/ubi/images/photo.png</file>
         <file>qml/ubi/images/progress.png</file>
         <file>qml/ubi/images/progress-small.png</file>
+        <file>qml/ubi/images/settings.png</file>
+        <file>qml/ubi/images/share.png</file>
         <file>qml/ubi/images/ubi50.png</file>
         <file>qml/ubi/images/up.png</file>
         <file>qml/ubi/images/upload.png</file>
+        <file>qml/ubi/oauth/oauth.js</file>
+        <file>qml/ubi/oauth/README.txt</file>
+        <file>qml/ubi/oauth/sha1.js</file>
         <file>translations/ubi.pl.qm</file>
     </qresource>
 </RCC>

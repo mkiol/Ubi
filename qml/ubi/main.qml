@@ -54,4 +54,9 @@ Rectangle {
         anchors.bottom: parent.bottom
     }
 
+    InitPage {
+        height: mainWindow.height;
+        width: mainWindow.width;
+    }
+
 }

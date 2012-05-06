@@ -8,7 +8,20 @@ body {
   color: white;
   margin: 0;
   font-family: "Ubuntu", Arial, sans-serif;
-  max-width: 750px;
+  font-size:14px;
+  max-width: 800px;
+}
+h1 {
+  font-size:18px;
+  font-weight:bold;
+}
+h2 {
+  font-size:15px;
+  font-weight:bold;
+}
+h3 {
+  font-size:14px;
+  font-weight:bold;
 }
 a {
   color: white;
@@ -25,10 +38,12 @@ ul {
 p {
   margin: 10px;
   margin-bottom: 20px;
+  font-size:14px;
 }
 img {
   border-right: 1px solid black;
   border-bottom: 1px solid black;
+  border: 1px solid black;
   margin: 10px
 }
 div#head {
@@ -54,50 +69,64 @@ div#content {
 </div>
 
 <div id="content">
-<p><strong>An unofficial Ubuntu One app for Maemo 5 and other Qt-enabled
-platforms</strong></p>
 
+<h1>An unofficial Ubuntu One app for Maemo 5 and other Qt-enabled
+platforms</h1>
+
+<h1>Features</h1>
 <p>
-<strong>Ubi</strong> provides access to Ubuntu One cloud service. Initial
-version supports simple storage management tasks like: file Download, Upload and
-Deletion, but the plan is to provide other cloud features i.e. Notes editing and
+Ubi provides access to Ubuntu One cloud service. Initial
+version supports:</p>
+<ul>
+<li>file downloading</li>
+<li>file uploading</li>
+<li>file/folder deletion</li>
+<li>file/folder renaming</li>
+<li>folder creation</li>
+<li>file publishing</li>
+<li>account data view (e.g. free space)</li>
+</ul>
+<p>
+The plan is to provide other cloud features in future such as Notes and
 Contacts synchronization.
 </p>
-<p>
-At the moment <strong>Ubi</strong> is available only for Nokia N900, but in
-Download section also an experimental release for Nokia N9 and Symbian was published.
-</p>
-<p>
-The application can be downloaded via the application manager under the
-Network section if you have the <strong>extras-devel</strong> repository enabled.
-</p>
 
-<p>
-Links:
+<h1>Devices</h1>
+<p>At the moment <strong>Ubi is available only for Nokia N900.</strong></p>
+<p>In <a href="https://garage.maemo.org/frs/?group_id=2327">Download</a> section also an experimental release for Nokia N9 and Symbian was published. Please note that these apps have not been tested on real devices.</p>
+
+<h1>Download</h1>
+<h2>Nokia N900</h2>
+<p>The application can be downloaded via the Application Manager under the
+Network section if you have the <i>extras-devel</i> repository enabled.</p>
+<p><a href="http://wiki.maemo.org/Extras-devel">Here</a> you can find instructions on how to enable <i>extras-devel</i> on Nokia N900.
+</p>
+<h2>Other devices</h2>
+<p>Find the right package in <a href="https://garage.maemo.org/frs/?group_id=2327">Download</a> section.</p>
+
+<h1>Links:</h1>
 <ul>
 <li><a href="https://garage.maemo.org/projects/ubi">Project Info page @garage</a></li>
-<li><a href="https://garage.maemo.org/tracker/?group_id=2327">Bug reports, feature requests</a></li>
+<li><a href="https://garage.maemo.org/tracker/?group_id=2327">Feedback, Bug reports, feature requests</a></li>
 <li><a href="https://garage.maemo.org/frs/?group_id=2327">Downloads</a></li>
 </ul>
-</p>
 
+<h1>Screenshots:</h1>
 <div id="screenshots">
 <br/>
-<a href="big/screenshot00.png"><img src="screenshot00.png"/></a>
-<a href="big/screenshot04.png"><img src="screenshot04.png"/></a>
-<a href="big/screenshot05.png"><img src="screenshot05.png"/></a>
+<a href="big/screenshot22.png"><img src="screenshot22.png"/></a>
 <a href="big/screenshot06.png"><img src="screenshot06.png"/></a>
+<a href="big/screenshot05.png"><img src="screenshot05.png"/></a>
 <a href="big/screenshot09.png"><img src="screenshot09.png"/></a>
 <a href="big/screenshot10.png"><img src="screenshot10.png"/></a>
 <a href="big/screenshot11.png"><img src="screenshot11.png"/></a>
 <a href="big/screenshot12.png"><img src="screenshot12.png"/></a>
-<a href="big/screenshot13.png"><img src="screenshot13.png"/></a>
 <a href="big/screenshot14.png"><img src="screenshot14.png"/></a>
 </div>
 
 <div id="foot">
 <div>
-
+&copy; 2012 Michal Kosciesza
 </div>
 
 </body>

@@ -12,6 +12,8 @@
 #include <QMap>
 #include <QStringList>
 #include <QMessageBox>
+#include <QApplication>
+#include <QClipboard>
 
 #if defined(Q_WS_MAEMO_5)
 #include <QDBusConnection>
@@ -25,6 +27,8 @@ class Utils : public QObject
     Q_OBJECT
 public:
     explicit Utils(QmlApplicationViewer *viewer, QSettings *settings, QObject *parent = 0);
+
+    Q_INVOKABLE void setClipboardText(const QString &);
     
 signals:
     void downloadAdded(QString filename);
@@ -109,6 +113,8 @@ private:
     QList<RequestData> quee;
 
     QMap<QNetworkReply*,QStringList> downloads;
+
+    QClipboard *_clipboard;
 
     void start();
 };

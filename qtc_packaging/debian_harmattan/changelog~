@@ -1,3 +1,16 @@
+ubi (0.9.1-3) unstable; urgency=low
+
+  * Added "publishing" feature
+
+ -- Michal Kosciesza <mkiol@o2.pl>  Sat, 05 May 2012 14:56:55 +0200
+
+ubi (0.9.1-2) unstable; urgency=low
+
+  * New icons
+  * Updated GUI
+
+ -- Michal Kosciesza <mkiol@o2.pl>  Thu, 03 May 2012 19:04:26 +0200
+
 ubi (0.9.1-1) unstable; urgency=low
 
   * Used storage information in Account tab
