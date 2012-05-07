@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Ubi: an unofficial Ubuntu One app for Maemo 5 and other Qt-enabled
+<title>Ubi: an unofficial Ubuntu One app for Maemo 5 (Nokia N900) and other Qt-enabled
 platforms</title>
 <style type="text/css">
 body {
@@ -72,6 +72,7 @@ div#content {
 
 <h1>An unofficial Ubuntu One app for Maemo 5 and other Qt-enabled
 platforms</h1>
+<br/>
 
 <h1>Features</h1>
 <p>
@@ -93,7 +94,7 @@ Contacts synchronization.
 
 <h1>Devices</h1>
 <p>At the moment <strong>Ubi is available only for Nokia N900.</strong></p>
-<p>In <a href="https://garage.maemo.org/frs/?group_id=2327">Download</a> section also an experimental release for Nokia N9 and Symbian was published. Please note that these apps have not been tested on real devices.</p>
+<p>In <a href="https://garage.maemo.org/frs/?group_id=2327">Download</a> section also an experimental release for Nokia N9/950 and Symbian was published. Please note that these apps have not been tested on real devices.</p>
 
 <h1>Download</h1>
 <h2>Nokia N900</h2>
@@ -104,30 +105,28 @@ Network section if you have the <i>extras-devel</i> repository enabled.</p>
 <h2>Other devices</h2>
 <p>Find the right package in <a href="https://garage.maemo.org/frs/?group_id=2327">Download</a> section.</p>
 
-<h1>Links:</h1>
+<h1>Links</h1>
 <ul>
 <li><a href="https://garage.maemo.org/projects/ubi">Project Info page @garage</a></li>
+<li><a href="http://maemo.org/packages/view/ubi/">Ubi package @maemo.org</a></li>
 <li><a href="https://garage.maemo.org/tracker/?group_id=2327">Feedback, Bug reports, feature requests</a></li>
 <li><a href="https://garage.maemo.org/frs/?group_id=2327">Downloads</a></li>
 </ul>
-
-<h1>Screenshots:</h1>
-<div id="screenshots">
 <br/>
+<h1>Screenshots</h1>
+<div id="screenshots">
 <a href="big/screenshot22.png"><img src="screenshot22.png"/></a>
 <a href="big/screenshot06.png"><img src="screenshot06.png"/></a>
 <a href="big/screenshot05.png"><img src="screenshot05.png"/></a>
 <a href="big/screenshot09.png"><img src="screenshot09.png"/></a>
 <a href="big/screenshot10.png"><img src="screenshot10.png"/></a>
 <a href="big/screenshot11.png"><img src="screenshot11.png"/></a>
-<a href="big/screenshot12.png"><img src="screenshot12.png"/></a>
-<a href="big/screenshot14.png"><img src="screenshot14.png"/></a>
+</div>
+&copy; 2012 Michal Kosciesza
 </div>
 
 <div id="foot">
 <div>
-&copy;
-</div>
 
 </body>
 </html>
