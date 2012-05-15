@@ -7,6 +7,8 @@ Item {
     property alias description: details.text
     property bool isDirectory: false
     property bool isPhoto: false
+    property bool isMusic: false
+    property bool isVideo: false
     property bool isPublic: false
     property variant properties: null
     property string filename: ""
@@ -14,7 +16,7 @@ Item {
 
     state: mouseArea.pressed && !root.disabled ? "pressed" : "unpressed"
 
-    //width: parent.width
+    width: mainWindow.width
     height: box.height
 
     signal clicked(variant prop)
@@ -68,12 +70,13 @@ Item {
 
     Image {
         id: icon
-        width: 50
-        height: 50
+        width: 60
+        height: 60
         x: Const.TEXT_MARGIN-5
         source: root.isDirectory ? "../images/folder.png" :
-                                   root.isPhoto ? "../images/photo.png" :
-                                                  "../images/document.png"
+                root.isPhoto ? "../images/photo.png" :
+                root.isMusic ? "../images/music.png" :
+                root.isVideo ? "../images/video.png" : "../images/document.png"
         sourceSize.width: width
         sourceSize.height: height
         anchors.verticalCenter: box.verticalCenter
@@ -85,7 +88,7 @@ Item {
         font.pixelSize: 30
         color: Const.DEFAULT_FOREGROUND_COLOR
         elide: Text.ElideRight
-        wrapMode: Text.Wrap
+        //wrapMode: Text.Wrap
         width: root.isPublic ?
                    root.width-x-Const.TEXT_MARGIN-3*Const.DEFAULT_MARGIN-arrow.width-publicIcon.width :
                    root.width-x-Const.TEXT_MARGIN-1*Const.DEFAULT_MARGIN-arrow.width
@@ -122,7 +125,7 @@ Item {
         width: 30
         height: 30
         anchors.right: box.right
-        anchors.margins: Const.TEXT_MARGIN
+        anchors.margins: Const.DEFAULT_MARGIN
         source: "../images/next.png"
         sourceSize.width: width
         sourceSize.height: height

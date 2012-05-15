@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by Qt Creator 2.4.1, 2012-05-06T15:27:39. -->
+<!-- Written by Qt Creator 2.4.1, 2012-05-15T22:53:24. -->
 <qtcreator>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -477,7 +477,7 @@
        <value type="QDateTime">2012-04-28T10:41:48</value>
        <value type="QDateTime">2012-05-03T18:56:53</value>
        <value type="QDateTime">2012-05-05T14:55:15</value>
-       <value type="QDateTime">2012-05-06T15:26:36</value>
+       <value type="QDateTime">2012-05-15T22:51:39</value>
       </valuelist>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">3</value>
@@ -1064,8 +1064,8 @@
       <value type="int" key="RemoteCompiler.BuildStep.PkgOpt">0</value>
       <value type="int" key="RemoteCompiler.BuildStep.PostOp">1</value>
       <value type="QString" key="RemoteCompiler.BuildStep.QtVersion">4_7_2_m1_1_1</value>
-      <value type="int" key="RemoteCompiler.BuildStep.SisOpt">0</value>
-      <value type="QString" key="RemoteCompiler.BuildStep.Target">s60_5_0</value>
+      <value type="int" key="RemoteCompiler.BuildStep.SisOpt">1</value>
+      <value type="QString" key="RemoteCompiler.BuildStep.Target">s60_5_0_n97</value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Build</value>

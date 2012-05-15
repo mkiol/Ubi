@@ -14,15 +14,15 @@ Utils::Utils(QmlApplicationViewer *viewer, QSettings *settings, QObject *parent)
 
 void Utils::minimizeWindow()
 {
-    #if defined(Q_WS_MAEMO_5)
-        // This is needed for Maemo5 to recognize minimization
-        QDBusConnection connection = QDBusConnection::sessionBus();
-        QDBusMessage message = QDBusMessage::createSignal(
-                    "/","com.nokia.hildon_desktop","exit_app_view");
-        connection.send(message);
-    #else
-        _viewer->setWindowState(Qt::WindowMinimized);
-    #endif
+#if defined(Q_WS_MAEMO_5)
+    // This is needed for Maemo5 to recognize minimization
+    QDBusConnection connection = QDBusConnection::sessionBus();
+    QDBusMessage message = QDBusMessage::createSignal(
+                "/","com.nokia.hildon_desktop","exit_app_view");
+    connection.send(message);
+#else
+    _viewer->setWindowState(Qt::WindowMinimized);
+#endif
 }
 
 void Utils::setOrientation(const QString &orientation)
@@ -243,9 +243,13 @@ void Utils::downloadFinished()
             emit downloadError(cur_filename);
         }
     }
+    else if (cur_reply->error() == QNetworkReply::OperationCanceledError)
+    {
+        emit operationCanceled(cur_filename);
+    }
     else
     {
-        qDebug() << "download error";
+        //qDebug() << "download error";
         emit downloadError(cur_filename);
     }
 
@@ -284,6 +288,8 @@ void Utils::uploadFile(const QString &folder, const QString &filename,
 
     emit uploadAdded(filename);
 
+    //qDebug() << "utils.cpp:uploadFile url=" << url;
+
     if(isFinished){
         start();
     }
@@ -306,12 +312,16 @@ void Utils::uploadFinished()
     {
         emit fileUploaded(cur_filename);
     }
+    else if (cur_reply->error() == QNetworkReply::OperationCanceledError)
+    {
+        emit operationCanceled(cur_filename);
+    }
     else
     {
         int httpStatus = cur_reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+
         //QString httpStatusMessage = cur_reply->attribute(QNetworkRequest::HttpReasonPhraseAttribute).toString();
         //QByteArray bytes = cur_reply->readAll();
-
         //qDebug() << "status: " << httpStatus << " " << httpStatusMessage;
         //qDebug() << "bytes: " << bytes;
 
@@ -319,10 +329,9 @@ void Utils::uploadFinished()
         {
             emit fileUploaded(cur_filename);
         } else {
-            qDebug() << "upload error";
+            //qDebug() << "upload error: " << httpStatus << " " << cur_reply->error() << " " << cur_reply->errorString();
             emit uploadError(cur_filename);
         }
-
     }
 
     cur_file->close();
@@ -351,8 +360,22 @@ void Utils::deleteFile(const QString &url, const QString &auth)
 
     QUrl _url(url);
     QNetworkRequest req(_url);
+
+    /*qDebug() << "url1=" << url;
+    qDebug() << "url2=" << req.url().toString();
+    qDebug() << "url3=" << req.url().path();*/
+
     //qDebug() << "auth: " << auth;
     req.setRawHeader("Authorization", auth.toAscii());
+
+    //qDebug() << "utils.cpp:uploadFile _nam=" << _nam->;
+
+    /*QList<QByteArray> l = req.rawHeaderList();
+    QList<QByteArray>::iterator i;
+    for(i=l.begin(); i!=l.end(); ++i)
+        qDebug() << "header=" << *i;
+        */
+
     temp_reply = _nam->deleteResource(req);
     connect(temp_reply,SIGNAL(finished()),this,SLOT(deleteFinished()));
     connect(temp_reply,SIGNAL(error(QNetworkReply::NetworkError)),this,SLOT(error(QNetworkReply::NetworkError)));
@@ -386,4 +409,34 @@ void Utils::setClipboardText(const QString &text)
 {
     _clipboard->setText(text, QClipboard::Clipboard);
     _clipboard->setText(text, QClipboard::Selection);
+}
+
+bool  Utils::isMaemo()
+{
+#if defined(Q_WS_MAEMO_5)
+    return true;
+#endif
+    return false;
+}
+
+void Utils::cancelFile(const QString & filename)
+{
+    //qDebug() << "Utils::cancelFile";
+    if(!isFinished && cur_filename==filename)
+    {
+        cur_reply->abort();
+    }
+    else
+    {
+        int l = quee.size();
+        for(int i=0;i<l;++i) {
+            RequestData data = quee.at(i);
+            //qDebug() << data.filename;
+            if(data.filename==filename) {
+                quee.removeAt(i);
+                emit fileRemovedFromQuee(filename);
+                return;
+            }
+        }
+    }
 }

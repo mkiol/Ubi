@@ -6,6 +6,8 @@ Page {
     id: root
     title: qsTr("Settings")
 
+    property alias taskMenu: taskMenu
+
     Component.onCompleted: {
         var _lang = Utils.locale();
         if(_lang=="pl_PL") {
@@ -19,8 +21,9 @@ Page {
     Flickable {
         width: root.width
         height: root.height
-        contentHeight: content.height+Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
-        y: Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
+
+        contentHeight: content.height+Const.TOP_BAR_HEIGHT+Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
+        y: Const.TOP_BAR_HEIGHT
 
         Column {
             id: content
@@ -60,13 +63,16 @@ Page {
                 label: qsTr("Log out")
                 onButtonClicked: {
                     Utils.resetAuthorization();
-                    pageStack.pop();
-                    pageStack.currentPage.init();
+                    pageStack.initialPage = "LoginPage.qml";
+                    pageStack.clear();
+                    //pageStack.pop();
+                    //pageStack.currentPage.init();
                 }
             }
         }
 
     }
+
     DialogCombo {
         id: dialogLang
         z: 200
@@ -81,6 +87,18 @@ Page {
         }
         onCanceled: {
             mask.state = "idle";
+        }
+    }
+
+    TaskMenu {
+        z: 200
+        id: taskMenu
+        menuHeight: menuFixed.height+4*Const.DEFAULT_MARGIN
+
+        menuDynamic: _menuDyn
+        Flow {
+            y: root.height-taskMenu.menuHeight-Const.SYSTEM_BAR_HEIGHT+1*Const.DEFAULT_MARGIN
+            id: _menuDyn
         }
     }
 }

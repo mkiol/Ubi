@@ -30,6 +30,7 @@ Item {
             anchors.centerIn: parent
             id: text
             color: Const.DEFAULT_BACKGROUND_COLOR
+            wrapMode: Text.WordWrap
             font.pixelSize: Const.DEFAULT_FONT_PIXEL_SIZE
         }
 
@@ -42,6 +43,16 @@ Item {
     function show(_text)
     {
         text.text= _text;
+        time.interval = 3000;
+        state = "visible"
+        //sound.play();
+        time.restart();
+    }
+
+    function show2(_text,interval)
+    {
+        text.text= _text;
+        time.interval = interval;
         state = "visible"
         //sound.play();
         time.restart();

@@ -5,6 +5,7 @@ Item {
     id: root
     anchors.right: parent.right
     anchors.left: parent.left
+    height: Const.SHADOW_OFFSET
 
     Rectangle {
         anchors.right: parent.right
@@ -12,6 +13,6 @@ Item {
 
         height: Const.SHADOW_OFFSET
         color: "black"
-        opacity: 0.4
+        opacity: 0.3
     }
 }

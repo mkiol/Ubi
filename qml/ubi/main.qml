@@ -1,6 +1,5 @@
 import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import "components"
-import Qt 4.7
 import "UIConstants.js" as Const
 
 Rectangle {
@@ -13,41 +12,104 @@ Rectangle {
 
     PageStack {
         id: pageStack
-        initialPage: Qt.resolvedUrl("StartPage.qml")
+        //initialPage: Qt.resolvedUrl("StartPage.qml")
+        initialPage: Qt.resolvedUrl("FilesPage.qml")
+    }
+
+    TopBar {
+        id: topbar
+        Component.onCompleted: {
+            visible = Utils.isMaemo();
+        }
+        onVisibleChanged: {
+            if(visible)
+                visible = Utils.isMaemo();
+        }
+    }
+
+    NotificationNew {
+        id: tip
+        anchors.horizontalCenter: mainWindow.horizontalCenter
+        y: mainWindow.height-height-Const.SYSTEM_BAR_HEIGHT-Const.TEXT_MARGIN
+    }
+
+    /*TaskBar {
+        id: taskBar
+    }*/
+
+    Connections {
+        target: Utils
+        onFileDownloaded: tip.show(qsTr("File downloaded."))
+        onFileUploaded: tip.show(qsTr("File uploaded."))
+        onDownloadError: tip.show(qsTr("Error while downloading."))
+        onUploadError: tip.show(qsTr("Error while uploading."))
+        onDownloadAdded: tip.show(qsTr("File added to the queue."))
+        onUploadAdded: tip.show(qsTr("File added to the queue."))
+        onOperationCanceled: tip.show(qsTr("File operation canceled."))
+    }
+
+    DialogBlank {
+        id: downloadDialog
+        z: 200
+
+        property bool isActiveDownloads: progressArea.count>0
+
+        boxHeight: progressArea.height + 3*Const.DEFAULT_MARGIN
+
+        Connections {
+            target: Utils
+            onFileDownloadProgress: progressArea.setProgress(filename,progress)
+            onFileUploadProgress: progressArea.setProgress(filename,progress)
+            onDownloadAdded: progressArea.addTask("download",filename)
+            onUploadAdded: progressArea.addTask("upload",filename)
+            onDownloadStarted: progressArea.start(filename)
+            onUploadStarted: progressArea.start(filename)
+            onFileDownloaded: progressArea.stop(filename)
+            onFileUploaded: progressArea.stop(filename)
+            onDownloadError: progressArea.stop(filename)
+            onUploadError: progressArea.stop(filename)
+            onOperationCanceled: progressArea.stop(filename)
+            onFileRemovedFromQuee: progressArea.stop(filename)
+        }
+
+        DownloadArea {
+            anchors.top: parent.box.top
+            anchors.topMargin: 2*Const.DEFAULT_MARGIN
+            anchors.margins: Const.DEFAULT_MARGIN
+            anchors.horizontalCenter: parent.horizontalCenter
+            id: progressArea
+            width: parent.width-3*Const.DEFAULT_MARGIN
+
+            //onHeightChanged: console.log("height: "+height);
+        }
+    }
+
+    DialogInfo {
+        id: aboutDialog
+        z: 200
+        fontSize: 28
+        iconSource: "images/ubi50.png"
+        textHeader: qsTr("<b>Ubi</b>")
+
+        text: qsTr("<p>An unofficial Ubuntu One app for Maemo 5 "
+              +"and other Qt-enabled platforms.</p>"
+              +"<p><small>http://ubi.garage.maemo.org</small></p>"
+              +"<p><small>© 2012 Michal Kosciesza</small></p>")
     }
 
     SystemBar {
         id: systemBar
-        onClicked: {
-            var mask = pageStack.currentPage.mask;
-            if(mask.state=="idle") {
-                taskBar.open();
-            }
+        z: 201
+        onClickedOnMask: {
+            aboutDialog.close();
+            downloadDialog.close();
+            pageStack.currentPage.taskMenu.close();
         }
-    }
-
-    Notification {
-        id: tip
-        x: (mainWindow.width-width)/2
-        y: 120
-    }
-
-    TaskBar {
-        id: taskBar
-    }
-
-    Connections {
-        target: Utils
-        onFileDownloaded: tip.show(qsTr("File downloaded!"))
-        onFileUploaded: tip.show(qsTr("File uploaded!"))
-        onDownloadError: tip.show(qsTr("Error while downloading!"))
-        onUploadError: tip.show(qsTr("Error while uploading!"))
-        onDownloadAdded: tip.show(qsTr("File added to the queue!"))
-        onUploadAdded: tip.show(qsTr("File added to the queue!"))
     }
 
     Rectangle {
         color: "black"
+        z: 300
         width: 1
         anchors.left: parent.left
         anchors.top: parent.top
@@ -55,6 +117,8 @@ Rectangle {
     }
 
     InitPage {
+        id: initPage
+        z: 301
         height: mainWindow.height;
         width: mainWindow.width;
     }

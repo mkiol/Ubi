@@ -16,44 +16,11 @@ Page {
     property string path
     property string name
 
-    menu: [
-        [qsTr("Upload file"),false],
-        [qsTr("Rename"),false],
-        [qsTr("Delete"),false],
-        [qsTr("New folder"),false],
-        [qsTr("Refresh"),false]
-    ]
-
-    function menuFun(id) {
-        if(id==qsTr("Upload file")) {
-            mask.state = "dialog";
-            fileSelector.open();
-        }
-        if(id==qsTr("Refresh")) {
-            init(root.properties);
-        }
-        if(id==qsTr("Rename")) {
-            if(root.path=="/") {
-                tip.show(qsTr("Root folder can't be renamed!"));
-            } else {
-                dialogRename.open();
-            }
-        }
-        if(id==qsTr("Delete")) {
-            if(root.path=="/") {
-                tip.show(qsTr("Root folder can't be deleted!"));
-            } else {
-                dialogDelete.open();
-            }
-        }
-        if(id==qsTr("New folder")) {
-            dialogNew.open();
-        }
-    }
+    property alias taskMenu: taskMenu
 
     function init(prop)
     {
-        if(mask.state!="defocused") {
+        if(mask.state!="defocused" && mask.state!="dialog") {
             mask.state = "busy";
         }
         if(root.properties && !prop) {
@@ -90,13 +57,14 @@ Page {
         //console.log("onErr");
         mask.state = "idle";
         if(status==401) {
-            tip.show(qsTr("Authorization failed!"));
+            tip.show(qsTr("Ubuntu One authorization has failed. Try once again or check login settings."));
         } else if(status==0) {
-            tip.show(qsTr("Unable to connect!"));
+            tip.show(qsTr("Unable to connect. Check internet connection."));
         } else {
-            tip.show(qsTr("Error: ")+status);
+            tip.show(qsTr("Unknown error: ")+status);
         }
         pageStack.pop();
+        initPage.hide()
     }
 
 
@@ -113,9 +81,9 @@ Page {
         //console.log("onErrRenamed");
         mask.state = "idle";
         if(status==401) {
-            tip.show(qsTr("Authorization failed!"));
+            tip.show(qsTr("Ubuntu One authorization has failed. Try once again or check login settings."));
         } else {
-            tip.show(qsTr("Error: ")+status);
+            tip.show(qsTr("Unknown error: ")+status);
         }
     }
 
@@ -156,7 +124,7 @@ Page {
             }
             object.isDirectory = nodes[i].kind == "directory";
             object.properties = nodes[i];
-            object.width = root.width;
+            //object.width = root.width;
             //object.height = 50;
             if(object.isDirectory) {
                 /*if(!nodes[i].has_children) {
@@ -175,26 +143,54 @@ Page {
                             pageStack.currentPage.init(prop);
                         });
 
+                // extension
                 ind = object.name.lastIndexOf(".");
                 var ext = "";
                 if(ind>=0) ext = object.name.substr(ind+1);
                 if(ext=="jpg" || ext=="JPG" || ext=="Jpg" ||
                    ext=="jpeg" || ext=="JPEG" || ext=="Jpeg" ||
                    ext=="gif" || ext=="GIF" || ext=="Gif" ||
+                   ext=="svg" || ext=="SVG" || ext=="Svg" ||
                    ext=="png" || ext=="PNG" || ext=="Png") {
                     object.isPhoto = true;
                 }
+                if(ext=="mp3" || ext=="MP3" || ext=="Mp3" ||
+                   ext=="wma" || ext=="WMA" || ext=="Wma" ||
+                   ext=="wav" || ext=="WAV" || ext=="Wav" ||
+                   ext=="ogg" || ext=="OGG" || ext=="Ogg" ||
+                   ext=="acc" || ext=="ACC" || ext=="Acc" ||
+                   ext=="m4a" || ext=="M4A" || ext=="M4a" ||
+                   ext=="flac" || ext=="FLAC" || ext=="Flac") {
+                    object.isMusic = true;
+                }
+                if(ext=="avi" || ext=="AVI" || ext=="Avi" ||
+                   ext=="mp4" || ext=="MP4" || ext=="Mp4" ||
+                   ext=="mpg" || ext=="MPG" || ext=="Mpg" ||
+                   ext=="mkv" || ext=="MKV" || ext=="Mkv" ||
+                   ext=="flv" || ext=="FLV" || ext=="Flv" ||
+                   ext=="m4v" || ext=="M4V" || ext=="M4v" ||
+                   ext=="3gp" || ext=="3GP") {
+                    object.isVideo = true;
+                }
             }
         }
-        if(mask.state!="defocused") {
+        if(mask.state!="defocused" && mask.state!="dialog") {
             mask.state = "idle";
         }
 
-        if(files.children.length==0) {
+        /*if(files.children.length==0) {
+            empty.visible = true;
+        } else {
+            empty.visible = false;
+        }*/
+
+        if(l==0) {
             empty.visible = true;
         } else {
             empty.visible = false;
         }
+
+        initPage.hide()
     }
 
     Connections {
@@ -206,15 +202,12 @@ Page {
         id: flickable
         width: parent.width
         height: parent.height
-        contentHeight: files.height+Const.SYSTEM_BAR_HEIGHT+2*Const.TEXT_MARGIN
-        //y: Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
-        y: Const.SYSTEM_BAR_HEIGHT+Const.DEFAULT_MARGIN
+        contentHeight: files.height+Const.TOP_BAR_HEIGHT+Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
+        y: Const.TOP_BAR_HEIGHT
         contentWidth: parent.width
 
         Column {
             id: files
-            //spacing: Const.DEFAULT_MARGIN
-            //x: Const.TEXT_MARGIN
             add: Transition {
                 NumberAnimation { properties: "opacity"; easing.type: Easing.InOutQuad }
             }
@@ -231,7 +224,7 @@ Page {
         visible: false
     }
 
-    FileSelector {
+    /*FileSelector {
         id: fileSelector
         z: 200
         folder: Utils.lastFolder()=="" ? Const.DEFAULT_FOLDER : Utils.lastFolder()
@@ -246,6 +239,21 @@ Page {
             U1.uploadFile(secrets,root,path,file,folder,Utils);
         }
 
+    }*/
+
+    FileDialog {
+        id: fileSelector
+        z: 200
+        hidden: true
+        folder: Utils.lastFolder()=="" ? Const.DEFAULT_FOLDER : Utils.lastFolder()
+        folderOnly: false
+        onFileSelected: {
+            mask.state = "idle";
+            fileSelector.close();
+            Utils.setLastFolder(folder);
+            var path = content_path+"/"+file;
+            U1.uploadFile(secrets,root,path,file,folder,Utils);
+        }
     }
 
     function getParentPath(path) {
@@ -298,13 +306,11 @@ Page {
         text: qsTr("Delete folder?")
         onOpened: mask.state = "dialog"
         onClosed: {
-            mask.state = "idle";
             if(ok) {
                 mask.state = "busy";
                 U1.deleteFile(secrets,properties.resource_path,root,Utils);
             }
         }
-        onCanceled: mask.state = "idle"
     }
 
     DialogInput {
@@ -316,7 +322,6 @@ Page {
         onOpened: {
             reset();
             Utils.setOrientation("auto");
-            mask.state = "dialog";
         }
         onClosed: {
             mask.state = "idle";
@@ -334,7 +339,6 @@ Page {
         }
         onCanceled: {
             Utils.setOrientation(root.orientation);
-            mask.state = "idle";
         }
     }
 
@@ -347,10 +351,8 @@ Page {
         onOpened: {
             reset();
             Utils.setOrientation("auto");
-            mask.state = "dialog";
         }
         onClosed: {
-            mask.state = "idle";
             Utils.setOrientation(root.orientation);
             var r = trim(resp);
             if(r!="") {
@@ -369,7 +371,106 @@ Page {
         }
         onCanceled: {
             Utils.setOrientation(root.orientation);
-            mask.state = "idle";
+        }
+    }
+
+    /*[qsTr("Upload file"),false],
+    [qsTr("Rename"),false],
+    [qsTr("Delete"),false],
+    [qsTr("New folder"),false],
+    [qsTr("Refresh"),false]
+    function menuFun(id) {
+        if(id==qsTr("Upload file")) {
+            mask.state = "dialog";
+            fileSelector.open();
+        }
+        if(id==qsTr("Refresh")) {
+            init(root.properties);
+        }
+        if(id==qsTr("Rename")) {
+            if(root.path=="/") {
+                tip.show(qsTr("Root folder can't be renamed!"));
+            } else {
+                dialogRename.open();
+            }
+        }
+        if(id==qsTr("Delete")) {
+            if(root.path=="/") {
+                tip.show(qsTr("Root folder can't be deleted!"));
+            } else {
+                dialogDelete.open();
+            }
+        }
+        if(id==qsTr("New folder")) {
+            dialogNew.open();
+        }
+    }
+*/
+
+    TaskMenu {
+        z: 200
+        id: taskMenu
+
+        contexMenu: true
+        menuDynamic: _menuDyn
+        menuHeight: menuDynamic.height+menuFixed.height+7*Const.DEFAULT_MARGIN
+
+        Flow {
+            id: _menuDyn
+
+            y: root.height-taskMenu.menuHeight-Const.SYSTEM_BAR_HEIGHT+2*Const.DEFAULT_MARGIN
+            x: Const.DEFAULT_MARGIN
+
+            width: parent.width-2*Const.DEFAULT_MARGIN
+            spacing: Const.DEFAULT_MARGIN
+
+            Button {
+                label: qsTr("Upload file");
+                onButtonClicked: {
+                    taskMenu.close();
+                    fileSelector.open();
+                }
+            }
+
+            Button {
+                label: qsTr("Rename");
+                onButtonClicked: {
+                    taskMenu.close();
+                    if(root.path=="/") {
+                        tip.show(qsTr("Root folder cannot be renamed."));
+                    } else {
+                        dialogRename.open();
+                    }
+                }
+            }
+
+            Button {
+                label: qsTr("Delete");
+                onButtonClicked: {
+                    taskMenu.close();
+                    if(root.path=="/") {
+                        tip.show(qsTr("Root folder cannot be deleted."));
+                    } else {
+                        dialogDelete.open();
+                    }
+                }
+            }
+
+            Button {
+                label: qsTr("New folder");
+                onButtonClicked: {
+                    taskMenu.close();
+                    dialogNew.open();
+                }
+            }
+
+            Button {
+                label: qsTr("Refresh");
+                onButtonClicked: {
+                    taskMenu.close();
+                    init(root.properties);
+                }
+            }
         }
     }
 }

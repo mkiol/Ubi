@@ -4,7 +4,9 @@ evil_hack_to_fool_lupdate {
             qml/ubi/DownloadArea.qml \
             qml/ubi/FileSelector.qml \
             qml/ubi/FilesPage.qml \
+            qml/ubi/FileDialog.qml \
             qml/ubi/LoginPage.qml \
+            qml/ubi/InitPage.qml \
             qml/ubi/main.qml \
             qml/ubi/PageStack.qml \
             qml/ubi/PropertiesPage.qml \
@@ -13,15 +15,20 @@ evil_hack_to_fool_lupdate {
             qml/ubi/StartPage.qml \
             qml/ubi/SystemBar.qml \
             qml/ubi/TaskBar.qml \
+            qml/ubi/TopBar.qml \
+            qml/ubi/TaskMenu.qml \
             qml/ubi/DownloadProgressBar.qml \
         qml/ubi/components/Bar.qml \
         qml/ubi/components/DialogCombo.qml \
         qml/ubi/components/FileOld.qml \
         qml/ubi/components/Notification.qml \
+        qml/ubi/components/NotificationNew.qml \
         qml/ubi/components/ToolIcon.qml \
         qml/ubi/components/ButtonNew.qml \
+        qml/ubi/components/DialogBlank.qml \
         qml/ubi/components/DialogInfo.qml \
         qml/ubi/components/File.qml \
+        qml/ubi/components/FileSmall.qml \
         qml/ubi/components/Page.qml \
         qml/ubi/components/Button.qml \
         qml/ubi/components/DialogInput.qml \

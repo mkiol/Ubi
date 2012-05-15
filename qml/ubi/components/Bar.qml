@@ -7,64 +7,82 @@ Item {
     property string label
     property bool isDownload: false
     property bool isUpload: false
-    height: 32
+    height: button.height
+    //width: parent.width
 
-    Image {
-        id: icon
-        width: root.height
-        height: root.height
-        source: isDownload? "../"+Const.ICON_DOWN : (isUpload? "../"+Const.ICON_UP : "")
-        sourceSize.width: width
-        sourceSize.height: height
-        visible: isDownload || isUpload
-    }
+    width: mainWindow.width-3*Const.DEFAULT_MARGIN
 
-    Rectangle {
-        id: bbar
+    signal cancel(string file);
 
-        color: Const.TRANSPARENT
-        border.width: 2
-        radius: 5
-        border.color: Const.DEFAULT_FOREGROUND_COLOR
-        height: root.height
-        width: icon.visible? root.width-icon.width-5 : root.width
-        x: icon.visible? icon.width+5 : 0
+    Row {
+        spacing: Const.DEFAULT_MARGIN
+        anchors.verticalCenter: parent.verticalCenter
+
+        Image {
+            id: icon
+            source: isDownload? "../images/download.png" :
+                    isUpload? "../images/upload.png" : ""
+            visible: isDownload || isUpload
+            anchors.verticalCenter: parent.verticalCenter
+        }
 
         Rectangle {
-            id: bar
-            height: parent.height
-            width: 0
-            x:0
-            radius: 5
-            color: Const.DEFAULT_FOREGROUND_COLOR
-            state: "right"
+            id: bbar
+            anchors.verticalCenter: parent.verticalCenter
+            color: Const.TRANSPARENT
+            border.width: 2
+            //radius: 5
+            border.color: Const.DEFAULT_FOREGROUND_COLOR
+            height: 40
+            width: icon.visible?
+                       root.width-icon.width-button.width-2*Const.DEFAULT_MARGIN :
+                       root.width-button.width-1*Const.DEFAULT_MARGIN
+            //x: icon.visible? icon.width+5 : 0
 
-            states: [
-                State {
-                    name: "right"
-                },
-                State {
-                    name: "left"
-                },
-                State {
-                    name: "progress"
-                }
-            ]
+            Rectangle {
+                id: bar
+                height: parent.height
+                width: 0
+                x:0
+                color: Const.DEFAULT_FOREGROUND_COLOR
+                state: "right"
+
+                states: [
+                    State {
+                        name: "right"
+                    },
+                    State {
+                        name: "left"
+                    },
+                    State {
+                        name: "progress"
+                    }
+                ]
+            }
+
+            Text {
+                id: caption
+                font.pixelSize: 25
+                anchors.centerIn: parent
+                //color: Const.DEFAULT_FOREGROUND_COLOR
+                text: root.label
+                width: bbar.width
+                elide: Text.ElideRight
+                horizontalAlignment: Text.AlignHCenter
+                color: "black"
+            }
         }
 
-        Text {
-            id: caption
-            font.pixelSize: 25
-            anchors.centerIn: parent
-            //color: Const.DEFAULT_FOREGROUND_COLOR
-            text: root.label.length>28 ? root.label.substring(0,25)+"..." : root.label
-            color: "black"
+        Button {
+            id: button
+            anchors.verticalCenter: parent.verticalCenter
+            iconSource: "images/close.png"
+            onButtonClicked: root.cancel(root.label)
         }
-
     }
 
     function setProgres(progress) {
-        console.log("proggress = "+progress);
+        //console.log("proggress = "+progress);
         if(bar.state!="progress") {
             time.stop();
             bar.state = "progress"

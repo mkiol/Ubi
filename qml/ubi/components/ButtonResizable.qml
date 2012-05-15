@@ -1,21 +1,16 @@
 import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import "../UIConstants.js" as Const
 
-
 Item {
     id: root
-    property alias name: label.text
-    property bool isDirectory: false
-    property variant properties: null
-    property string filename: ""
-    property int textMax: 27
+    property alias text: textbox.text
+    property bool disabled: false
+    property int fontSize: 30
+    property string iconSource
 
     state: mouseArea.pressed && !root.disabled ? "pressed" : "unpressed"
 
-    width: box.width
-    height: box.height
-
-    signal clicked(variant prop)
+    signal clicked(string label)
 
     Rectangle {
         id: shadow
@@ -23,15 +18,13 @@ Item {
         height: box.height
         color: Const.SHADOW_COLOR;
         radius: 10
-        x: Const.SHADOW_OFFSET;
-        y: Const.SHADOW_OFFSET;
     }
 
     Rectangle {
         id: box
-        color: root.isDirectory ? "black" : "white"
-        height: label.height+20
-        width: label.width<=100 ? 120 : label.width+20
+        color: root.disabled ? Const.COOL_GREY_COLOR : "black"
+        height: root.height
+        width: root.width
         radius: 10
     }
 
@@ -40,34 +33,40 @@ Item {
         height: box.height
         x: box.x
         y: box.y
-        color: root.isDirectory ? "white" : "black"
-        opacity: 0.5
+        color: Const.WARM_GREY_COLOR
         radius: 10
-        visible: mouseArea.pressed
+        visible: root.state == "pressed"
+        //border.color: "black"
+        //border.width: Const.SHADOW_OFFSET
+    }
+
+    Image {
+        id: icon
+        width: 40
+        height: 40
+        anchors.centerIn: box
+        source: root.iconSource == "" ? "" : "../" + root.iconSource
+        sourceSize.width: width
+        sourceSize.height: height
     }
 
     Text {
-        id: label
-        x: 10
-        y: 10
-        font.pixelSize: 30
-        color: root.isDirectory ? "white" : "black"
-        elide: Text.ElideLeft
-        anchors.centerIn: box
-        wrapMode: Text.Wrap
-        onTextChanged: {
-            if(text.length>root.textMax)
-                root.name = text.substring(0,root.textMax-3)+"...";
-        }
+        id: textbox
+        font.pixelSize: root.fontSize
+        elide: Text.ElideRight
+        color: root.disabled ? "gray" : "white"
+        anchors.left: box.left; anchors.right: box.right
+        anchors.margins: Const.DEFAULT_MARGIN
+        anchors.verticalCenter: box.verticalCenter
+        //visible: root.iconSource == ""
     }
 
     MouseArea {
         id: mouseArea
         width: box.width
         height: box.height
-        onClicked: {
-            root.clicked(root.properties);
-        }
+        onClicked: root.clicked(root.label)
+        enabled: !root.disabled
     }
 
     states: [
@@ -87,3 +86,6 @@ Item {
         }
     ]
 }
+
+
+

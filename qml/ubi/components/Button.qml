@@ -27,8 +27,9 @@ Item {
     Rectangle {
         id: box
         color: root.disabled ? Const.COOL_GREY_COLOR : "black"
-        height: textbox.height+20
-        width: textbox.width<100 ? 120 : textbox.width+20
+        height: root.iconSource=="" ? textbox.height+20 : icon.height+20
+        //width: textbox.width<100 ? 120 : textbox.width+20
+        width: root.iconSource=="" ? textbox.width+30 : icon.width+30
         radius: 10
     }
 
@@ -46,8 +47,8 @@ Item {
 
     Image {
         id: icon
-        width: 40
-        height: 40
+        //width: 30
+        //height: 30
         anchors.centerIn: box
         source: root.iconSource == "" ? "" : "../" + root.iconSource
         sourceSize.width: width
@@ -67,8 +68,6 @@ Item {
 
     Text {
         id: textbox
-        //x: 10
-        //y: 10
         font.pixelSize: root.fontSize
         color: root.disabled ? "gray" : "white"
         anchors.centerIn: box

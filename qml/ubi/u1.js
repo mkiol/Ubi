@@ -139,6 +139,8 @@ function getFiles(secrets,rootNode,root)
                         root.onErr(xhr.status);
                     } else {
                         //console.log(xhr.responseText);
+                        //console.log("");
+                        //console.log(xhr.getAllResponseHeaders());
                         var resp = eval('('+xhr.responseText+')');
                         var nodes = resp.children;
                         root.onResp(nodes);
@@ -268,15 +270,15 @@ function startPublishing(secrets,resourcePath,root)
 function newFolder(secrets,resourcePath,root)
 {
     var url = "https://one.ubuntu.com/api/file_storage/v1"+encodeURI(resourcePath);
-    console.log("url: "+url);
+    //console.log("url: "+url);
     var xhr = oAuthRequest(url,secrets,"PUT");
     xhr.setRequestHeader("Content-Type","application/json");
     var body = '{"kind": "directory"}';
-    console.log("body: "+body);
+    //console.log("body: "+body);
     xhr.onreadystatechange = function() {
                 if(xhr.readyState===4) {
                     if(xhr.status>=400||xhr.status===0) {
-                        console.log("status: "+xhr.status);
+                        //console.log("status: "+xhr.status);
                         //console.log(xhr.responseText);
                         root.onErrNew(xhr.status);
                     } else {
@@ -292,9 +294,10 @@ function newFolder(secrets,resourcePath,root)
 
 function deleteFile(secrets,resourcePath,root,utils)
 {
-    var url = "https://one.ubuntu.com/api/file_storage/v1"+encodeURI(resourcePath);
-    //console.log("url: "+url);
-    var auth = oAuthHeader(url,secrets,"DELETE");
+    var urlA = "https://one.ubuntu.com/api/file_storage/v1"+encodeURI(resourcePath);
+    var url = "https://one.ubuntu.com/api/file_storage/v1"+resourcePath;
+    //console.log("u1.js:delete url="+url);
+    var auth = oAuthHeader(urlA,secrets,"DELETE");
     utils.deleteFile(url,auth);
 }
 
@@ -352,12 +355,15 @@ function fixFolder(path) {
 function getFileContent(secrets,root,path,folder,size,utils)
 {
     //var url = "https://one.ubuntu.com/api/file_storage/v1"+encodeURI(path);
-    var url = "https://files.one.ubuntu.com"+encodeURI(path);
+
+    var url = "https://files.one.ubuntu.com"+path;
+    var urlA = "https://files.one.ubuntu.com"+encodeURI(path);
+
     var filename = fixFilename(path);
     var ffolder = fixFolder(folder);
     //console.log("url: "+url);
     //console.log("ffolder: "+ffolder);
-    var auth = oAuthHeader(url,secrets,"GET");
+    var auth = oAuthHeader(urlA,secrets,"GET");
     //console.log("auth: "+auth);
     utils.downloadFile(ffolder,filename,url,size,auth);
 }
@@ -366,10 +372,15 @@ function uploadFile(secrets,root,path,filename,folder,utils)
 {
     //var url = "https://one.ubuntu.com/api/file_storage/v1"+encodeURI(path);
     //var url = "https://files.one.ubuntu.com"+path;
-    var url = "https://files.one.ubuntu.com"+encodeURI(path);
-    //console.log(url);
+
+    var url = "https://files.one.ubuntu.com"+path;
+    var urlA = "https://files.one.ubuntu.com"+encodeURI(path);
+
+    //console.log("u1.js:uploadFile path=" + path);
+    //console.log("u1.js:uploadFile url=" + url);
+
     var ffolder = fixFolder(folder);
-    var auth = oAuthHeader(url,secrets,"PUT");
+    var auth = oAuthHeader(urlA,secrets,"PUT");
     utils.uploadFile(ffolder,filename,url,auth);
 }
 

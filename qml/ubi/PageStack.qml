@@ -35,8 +35,9 @@ Item {
         }
         pageView.decrementCurrentIndex();
         pageModel.children[i].source = "";
-        taskBar.close();
-        root.currentPage.reloadMenu();
+        currentPage.taskMenu.close();
+        //taskBar.close();
+        //root.currentPage.reloadMenu();
         //mask.state = "idle";
     }
 

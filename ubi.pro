@@ -43,7 +43,7 @@ SOURCES += main.cpp \
     utils.cpp
 
 # evil_hack_to_fool_lupdate
-#include(translation.pri)
+include(translation.pri)
 
 # Please do not modify the following two lines. Required for deployment.
 include(qmlapplicationviewer/qmlapplicationviewer.pri)
@@ -70,5 +70,5 @@ HEADERS += \
 
 TRANSLATIONS += translations/ubi.pl.ts
 
-RESOURCES += \
-    ubi.qrc
+#RESOURCES += \
+#    ubi.qrc

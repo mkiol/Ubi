@@ -36,7 +36,8 @@ var DEFAULT_TEXT_COLOR = DEFAULT_FOREGROUND_COLOR;
 
 var DEFAULT_FOLDER = "file:///home/user/MyDocs";
 
-var SYSTEM_BAR_HEIGHT = 60;
+var SYSTEM_BAR_HEIGHT = 70;
+var TOP_BAR_HEIGHT = 10;
 var TEXT_MARGIN = 25;
 
 // images

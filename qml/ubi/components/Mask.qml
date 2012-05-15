@@ -10,9 +10,9 @@ Item {
 
     onStateChanged: {
         if(root.state=="busy") {
-            animationIcon.start();
+            busy.running = true;
         } else {
-            animationIcon.stop();
+            busy.running = false;
         }
     }
 
@@ -29,25 +29,11 @@ Item {
             font.pixelSize: Const.DEFAULT_FONT_PIXEL_SIZE
         }
 
-        Image {
-            id: icon
-            width: 64
-            height: 64
+        BusyIndicator {
+            id: busy
             anchors.centerIn: parent
-            source: "../images/progress.png"
-            sourceSize.width: width
-            sourceSize.height: height
+            running: true
             visible: root.state=="busy"
-
-            NumberAnimation {
-                id: animationIcon
-                target: icon
-                properties: "rotation"
-                from: 0
-                to: 360
-                duration: 500
-                loops: Animation.Infinite
-            }
         }
 
         MouseArea {

@@ -29,6 +29,8 @@ public:
     explicit Utils(QmlApplicationViewer *viewer, QSettings *settings, QObject *parent = 0);
 
     Q_INVOKABLE void setClipboardText(const QString &);
+    Q_INVOKABLE bool isMaemo();
+    Q_INVOKABLE void cancelFile(const QString &);
     
 signals:
     void downloadAdded(QString filename);
@@ -41,6 +43,8 @@ signals:
     void uploadError(QString filename);
     void fileDownloadProgress(QString filename, float progress);
     void fileUploadProgress(QString filename, float progress);
+    void operationCanceled(QString filename);
+    void fileRemovedFromQuee(QString filename);
 
     // U1 api
     void fileDeleted();

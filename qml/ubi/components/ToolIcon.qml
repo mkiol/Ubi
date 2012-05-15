@@ -1,22 +1,31 @@
-import QtQuick 1.0
+import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
+import "../UIConstants.js" as Const
 
 Item {
     id: root
 
     property string iconSource
-    property bool enabled: true
     property bool pressed: mouseArea.pressed
+    property string color: Const.TRANSPARENT
 
     signal clicked
     signal pressAndHold
 
     width: 56
     height: 56
-    opacity: enabled ? 1 : 0.3
 
     Rectangle {
-        anchors { fill: parent; margins: 5 }
-        color: "gray"
+        id: background
+        anchors { fill: parent; margins: 6 }
+        //color: root.color
+        color: "black"
+        opacity: 0.1
+        radius: 10
+    }
+
+    Rectangle {
+        anchors { fill: parent; margins: 6 }
+        color: "white"
         opacity: 0.5
         radius: 10
         visible: mouseArea.pressed
@@ -24,8 +33,8 @@ Item {
 
     Image {
         id: icon
-        width: 40
-        height: 40
+        width: 30
+        height: 30
         anchors.centerIn: parent
         source: iconSource == "" ? "" : "../" + iconSource
         sourceSize.width: width

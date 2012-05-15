@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   width="30px"
+   height="30px"
+   viewBox="0 0 30 30"
+   enable-background="new 0 0 30 30"
+   xml:space="preserve"
+   id="svg2"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="video-big.svg"
+   inkscape:export-filename="/home/mkiol/dev/Qt/ubi/qml/ubi/images/video.png"
+   inkscape:export-xdpi="180"
+   inkscape:export-ydpi="180"><metadata
+   id="metadata19"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs17" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1004"
+   inkscape:window-height="560"
+   id="namedview15"
+   showgrid="false"
+   inkscape:zoom="7.3202127"
+   inkscape:cx="-14.099104"
+   inkscape:cy="14.795088"
+   inkscape:window-x="140"
+   inkscape:window-y="271"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="svg2"
+   inkscape:snap-global="false" />
+<path
+   inkscape:connector-curvature="0"
+   d="M 15.000178,30 C 3.8870516,30 0,26.113305 0,15.000179 0,3.8866946 3.8870516,0 15.000178,0 26.113304,0 30,3.8866946 30,15.000179 30,26.112947 26.113304,30 15.000178,30 z"
+   id="path4"
+   style="fill:#000000;fill-opacity:0.19607843" /><g
+   id="DO_NOT_EDIT_-_BOUNDING_BOX">
+	<rect
+   id="BOUNDING_BOX"
+   fill="none"
+   width="30"
+   height="30" />
+</g>
+
+<g
+   transform="matrix(0.73913043,0,0,0.73913043,3.9130435,3.9130436)"
+   id="PLACE_YOUR_GRAPHIC_HERE"><path
+     style="opacity:0.3"
+     inkscape:connector-curvature="0"
+     d="M 18.994,3.512 C 18.974,3.51 18.957,3.5 18.938,3.5 h -7.875 c -0.02,0 -0.037,0.01 -0.057,0.012 C 3.613,3.63 1,6.394 1,14 c 0,7.606 2.613,10.37 10.006,10.488 0.02,0.002 0.037,0.012 0.057,0.012 h 7.875 c 0.02,0 0.036,-0.01 0.057,-0.012 C 26.387,24.37 29,21.606 29,14 29,6.394 26.387,3.63 18.994,3.512 z m 1.998,10.822 -3.609,2.084 c -0.417,0.241 -1.1,0.635 -1.516,0.875 l -3.609,2.084 C 11.84,19.617 11.5,19.421 11.5,18.939 V 8.854 c 0,-0.481 0.34,-0.678 0.758,-0.438 l 3.609,2.084 c 0.416,0.241 1.099,0.634 1.516,0.875 l 3.609,2.084 c 0.417,0.24 0.417,0.635 0,0.875 z"
+     id="path7" /><path
+     style="opacity:0.15"
+     inkscape:connector-curvature="0"
+     d="m 11.063,26.5 c -0.055,0 -0.12,-0.007 -0.183,-0.018 C 3.074,26.354 0,23.132 0,15 0,6.889 3.059,3.662 10.904,3.513 10.959,3.505 11.015,3.5 11.063,3.5 h 7.875 c 0.055,0 0.118,0.006 0.18,0.017 C 26.927,3.646 30,6.869 30,15 30,23.111 26.941,26.339 19.096,26.486 19.041,26.495 18.986,26.5 18.938,26.5 h -7.875 z"
+     id="path9" /><path
+     style="opacity:0.15"
+     inkscape:connector-curvature="0"
+     d="M 18.994,4.512 C 18.974,4.51 18.957,4.5 18.938,4.5 h -7.875 c -0.02,0 -0.037,0.01 -0.057,0.012 C 3.613,4.63 1,7.394 1,15 c 0,7.606 2.613,10.37 10.006,10.488 0.02,0.002 0.037,0.012 0.057,0.012 h 7.875 c 0.02,0 0.036,-0.01 0.057,-0.012 C 26.387,25.37 29,22.606 29,15 29,7.394 26.387,4.63 18.994,4.512 z m 1.998,10.822 -3.609,2.084 c -0.417,0.241 -1.1,0.635 -1.516,0.875 l -3.609,2.084 C 11.84,20.617 11.5,20.421 11.5,19.939 V 9.854 c 0,-0.481 0.34,-0.678 0.758,-0.438 l 3.609,2.084 c 0.416,0.241 1.099,0.634 1.516,0.875 l 3.609,2.084 c 0.417,0.24 0.417,0.635 0,0.875 z"
+     id="path11" /><path
+     style="fill:#ffffff"
+     inkscape:connector-curvature="0"
+     d="M 18.994,4.512 C 18.974,4.51 18.957,4.5 18.938,4.5 h -7.875 c -0.02,0 -0.037,0.01 -0.057,0.012 C 3.613,4.63 1,7.394 1,15 c 0,7.606 2.613,10.37 10.006,10.488 0.02,0.002 0.037,0.012 0.057,0.012 h 7.875 c 0.02,0 0.036,-0.01 0.057,-0.012 C 26.387,25.37 29,22.606 29,15 29,7.394 26.387,4.63 18.994,4.512 z m 1.998,10.822 -3.609,2.084 c -0.417,0.241 -1.1,0.635 -1.516,0.875 l -3.609,2.084 C 11.84,20.617 11.5,20.421 11.5,19.939 V 9.854 c 0,-0.481 0.34,-0.678 0.758,-0.438 l 3.609,2.084 c 0.416,0.241 1.099,0.634 1.516,0.875 l 3.609,2.084 c 0.417,0.24 0.417,0.635 0,0.875 z"
+     id="path13" /></g></svg>

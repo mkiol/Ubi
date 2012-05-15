@@ -91,6 +91,12 @@ Page {
 
     }
 
+    /*FileDialog {
+        z: 200
+        hidden: false
+        folderOnly: false
+    }*/
+
     DialogInfo {
         id: dialog
         z: 200

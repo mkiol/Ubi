@@ -9,6 +9,7 @@ Page {
     title: qsTr("Account")
 
     property variant secrets
+    property alias taskMenu: taskMenu
 
     Component.onCompleted: init()
 
@@ -52,11 +53,11 @@ Page {
         //console.log("onErr");
         mask.state = "idle";
         if(status==401) {
-            tip.show(qsTr("Authorization failed!"));
+            tip.show(qsTr("Ubuntu One authorization has failed. Try once again or check login settings."));
         } else if(status==0) {
-            tip.show(qsTr("Unable to connect!"));
+            tip.show(qsTr("Unable to connect. Check internet connection."));
         } else {
-            tip.show(qsTr("Error: ")+status);
+            tip.show(qsTr("Unknown error: ")+status);
         }
         pageStack.pop();
     }
@@ -64,8 +65,9 @@ Page {
     Flickable {
         width: root.width
         height: root.height
-        contentHeight: content.height+Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
-        y: Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
+
+        contentHeight: content.height+Const.TOP_BAR_HEIGHT+Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
+        y: Const.TOP_BAR_HEIGHT
 
         Column {
             id: content
@@ -154,6 +156,18 @@ Page {
                 width: root.width - 6*Const.DEFAULT_MARGIN
             }
             Spacer{}
+        }
+    }
+
+    TaskMenu {
+        z: 200
+        id: taskMenu
+        menuHeight: menuFixed.height+4*Const.DEFAULT_MARGIN
+
+        menuDynamic: _menuDyn
+        Flow {
+            y: root.height-taskMenu.menuHeight-Const.SYSTEM_BAR_HEIGHT+1*Const.DEFAULT_MARGIN
+            id: _menuDyn
         }
     }
 }

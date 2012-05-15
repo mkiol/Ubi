@@ -13,6 +13,8 @@ Page {
     property variant properties
     property bool isPublic
 
+    property alias taskMenu: taskMenu
+
     menu: [
         [qsTr("Download"),false],
         [qsTr("Publish"),false],
@@ -50,9 +52,9 @@ Page {
         onOperationError: {
             mask.state = "idle";
             if(status==401) {
-                tip.show(qsTr("Authorization failed!"));
+                tip.show(qsTr("Ubuntu One authorization has failed. Try once again or check login settings."));
             } else {
-                tip.show(qsTr("Error: ")+status);
+                tip.show(qsTr("Unknown error: ")+status);
             }
         }
     }
@@ -100,11 +102,11 @@ Page {
     {
         mask.state = "idle";
         if(status==401) {
-            tip.show(qsTr("Authorization failed!"));
+            tip.show(qsTr("Ubuntu One authorization has failed. Try once again or check login settings."));
         } else if(status==0) {
-            tip.show(qsTr("Unable to connect!"));
+            tip.show(qsTr("Unable to connect. Check internet connection."));
         } else {
-            tip.show(qsTr("Error: ")+status);
+            tip.show(qsTr("Unknown error: ")+status);
         }
     }
 
@@ -150,8 +152,8 @@ Page {
     Flickable {
         width: root.width
         height: root.height
-        contentHeight: content.height+Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
-        y: Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
+        contentHeight: content.height+Const.TOP_BAR_HEIGHT+Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
+        y: Const.TOP_BAR_HEIGHT
 
         Column {
             id: content
@@ -256,7 +258,7 @@ Page {
         }
     }
 
-    FileSelector {
+    /*FileSelector {
         id: fileSelector
         z: 200
         y: 200
@@ -266,7 +268,21 @@ Page {
             U1.getFileContent(secrets,root,properties.content_path,folder,properties.size,Utils);
             Utils.setLastFolder(folder);
         }
+    }*/
+
+    FileDialog {
+        id: fileSelector
+        z: 200
+        hidden: true
+        folder: Utils.lastFolder()=="" ? Const.DEFAULT_FOLDER : Utils.lastFolder()
+        folderOnly: true
+        onFolderSelected: {
+            fileSelector.close();
+            U1.getFileContent(secrets,root,properties.content_path,folder,properties.size,Utils);
+            Utils.setLastFolder(folder);
+        }
     }
+
 
     DialogYesNo {
         id: dialogDelete
@@ -366,6 +382,88 @@ Page {
         onCanceled: {
             Utils.setOrientation(root.orientation);
             mask.state = "idle";
+        }
+    }
+
+    /*
+    menu: [
+        [qsTr("Download"),false],
+        [qsTr("Publish"),false],
+        [qsTr("Rename"),false],
+        [qsTr("Delete"),false]
+    ]
+
+    function menuFun(id) {
+        if(id==qsTr("Download")) {
+            fileSelector.state = "visible";
+        }
+        if(id==qsTr("Publish")) {
+            if(isPublic) {
+                dialogStopPublish.open();
+            } else {
+                dialogStartPublish.open();
+            }
+        }
+        if(id==qsTr("Rename")) {
+            dialogRename.open();
+        }
+        if(id==qsTr("Delete")) {
+            dialogDelete.open();
+        }
+    }*/
+
+    TaskMenu {
+        z: 200
+        id: taskMenu
+
+        contexMenu: true
+        menuDynamic: _menuDyn
+        menuHeight: menuDynamic.height+menuFixed.height+7*Const.DEFAULT_MARGIN
+
+        Flow {
+            id: _menuDyn
+
+            y: root.height-taskMenu.menuHeight-Const.SYSTEM_BAR_HEIGHT+2*Const.DEFAULT_MARGIN
+            x: Const.DEFAULT_MARGIN
+
+            width: parent.width-2*Const.DEFAULT_MARGIN
+            spacing: Const.DEFAULT_MARGIN
+
+            Button {
+                label: qsTr("Download");
+                onButtonClicked: {
+                    taskMenu.close();
+                    fileSelector.open();
+                }
+            }
+
+            Button {
+                label: qsTr("Publish");
+                onButtonClicked: {
+                    taskMenu.close();
+                    if(isPublic) {
+                        dialogStopPublish.open();
+                    } else {
+                        dialogStartPublish.open();
+                    }
+                }
+            }
+
+            Button {
+                label: qsTr("Rename");
+                onButtonClicked: {
+                    taskMenu.close();
+                    dialogRename.open();
+                }
+            }
+
+            Button {
+                label: qsTr("Delete");
+                onButtonClicked: {
+                    taskMenu.close();
+                    dialogDelete.open();
+                }
+            }
         }
     }
 

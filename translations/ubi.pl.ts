@@ -5,11 +5,11 @@
     <name>AccountPage</name>
     <message>
         <source>Authorization failed!</source>
-        <translation>Autoryzacja nie powiodła się!</translation>
+        <translation type="obsolete">Autoryzacja nie powiodła się!</translation>
     </message>
     <message>
         <source>Error: </source>
-        <translation>Błąd:</translation>
+        <translation type="obsolete">Błąd:</translation>
     </message>
     <message>
         <source>User name:</source>
@@ -29,11 +29,23 @@
     </message>
     <message>
         <source>Unable to connect!</source>
-        <translation>Błąd połączenia!</translation>
+        <translation type="obsolete">Błąd połączenia!</translation>
     </message>
     <message>
         <source>Used:</source>
         <translation>Wykorzystano:</translation>
+    </message>
+    <message>
+        <source>Ubuntu One authorization has failed. Try once again or check login settings.</source>
+        <translation>Autoryzacja w Ubuntu One nie powiodła się. Spróbuj jeszcze raz lub sprawdź ustawienia logowania.</translation>
+    </message>
+    <message>
+        <source>Unable to connect. Check internet connection.</source>
+        <translation>Nie można połączyć z siecią. Sprawadź połączenie z Internetem.</translation>
+    </message>
+    <message>
+        <source>Unknown error: </source>
+        <translation>Nieznany błąd:</translation>
     </message>
 </context>
 <context>
@@ -51,7 +63,15 @@
     <name>DownloadArea</name>
     <message>
         <source>No active downloads</source>
+        <translation type="obsolete">Brak aktywnych pobrań</translation>
+    </message>
+    <message>
+        <source>No active downloads or uploads</source>
         <translation>Brak aktywnych pobrań</translation>
+    </message>
+    <message>
+        <source>Active downloads and uploads</source>
+        <translation>Aktywne pobrania</translation>
     </message>
 </context>
 <context>
@@ -78,11 +98,11 @@
     </message>
     <message>
         <source>Root folder can&apos;t be renamed!</source>
-        <translation>Nie można zmienić nazwy!</translation>
+        <translation type="obsolete">Nie można zmienić nazwy!</translation>
     </message>
     <message>
         <source>Root folder can&apos;t be deleted!</source>
-        <translation>Nie można zmienić nazwy!</translation>
+        <translation type="obsolete">Nie można zmienić nazwy!</translation>
     </message>
     <message>
         <source>Authorization failed!</source>
@@ -122,7 +142,7 @@
     </message>
     <message>
         <source>Unable to connect!</source>
-        <translation>Błąd połączenia!</translation>
+        <translation type="obsolete">Błąd połączenia!</translation>
     </message>
     <message>
         <source>Enter new folder name:</source>
@@ -135,6 +155,45 @@
     <message>
         <source>Empty</source>
         <translation>Pusty</translation>
+    </message>
+    <message>
+        <source>Root folder cannot be renamed.</source>
+        <translation>Nie można zmienić nazwy głównego foldera.</translation>
+    </message>
+    <message>
+        <source>Root folder cannot be deleted.</source>
+        <translation>Nie można usunąć głównego foldera.</translation>
+    </message>
+    <message>
+        <source>Ubuntu One authorization has failed. Try once again or check login settings.</source>
+        <translation>Autoryzacja w Ubuntu One nie powiodła się. Spróbuj jeszcze raz lub sprawdź ustawienia logowania.</translation>
+    </message>
+    <message>
+        <source>Unable to connect. Check internet connection.</source>
+        <translation>Nie można połączyć z siecią. Sprawadź połączenie z Internetem.</translation>
+    </message>
+    <message>
+        <source>Unknown error: </source>
+        <translation>Nieznany błąd:</translation>
+    </message>
+</context>
+<context>
+    <name>InitPage</name>
+    <message>
+        <source>Ubuntu One authorization has failed. Try once again or check login settings.</source>
+        <translation>Autoryzacja w Ubuntu One nie powiodła się. Spróbuj jeszcze raz lub sprawdź ustawienia logowania.</translation>
+    </message>
+    <message>
+        <source>Unable to connect. Check internet connection.</source>
+        <translation>Nie można połączyć z siecią. Sprawadź połączenie z Internetem.</translation>
+    </message>
+    <message>
+        <source>Unknown error: </source>
+        <translation>Nieznany błąd:</translation>
+    </message>
+    <message>
+        <source>Connecting...</source>
+        <translation>Łączenie...</translation>
     </message>
 </context>
 <context>
@@ -157,11 +216,11 @@
     </message>
     <message>
         <source>Authorization failed!</source>
-        <translation>Autoryzacja nie powiodła się!</translation>
+        <translation type="obsolete">Autoryzacja nie powiodła się!</translation>
     </message>
     <message>
         <source>Error: </source>
-        <translation>Błąd:</translation>
+        <translation type="obsolete">Błąd:</translation>
     </message>
     <message>
         <source>Login</source>
@@ -173,7 +232,19 @@
     </message>
     <message>
         <source>Unable to connect!</source>
-        <translation>Błąd połączenia!</translation>
+        <translation type="obsolete">Błąd połączenia!</translation>
+    </message>
+    <message>
+        <source>Ubuntu One authorization has failed. Try once again or check login settings.</source>
+        <translation>Autoryzacja w Ubuntu One nie powiodła się. Spróbuj jeszcze raz lub sprawdź ustawienia logowania.</translation>
+    </message>
+    <message>
+        <source>Unable to connect. Check internet connection.</source>
+        <translation>Nie można połączyć z siecią. Sprawadź połączenie z Internetem.</translation>
+    </message>
+    <message>
+        <source>Unknown error: </source>
+        <translation>Nieznany błąd:</translation>
     </message>
 </context>
 <context>
@@ -192,11 +263,11 @@
     </message>
     <message>
         <source>Authorization failed!</source>
-        <translation>Autoryzacja nie powiodła się!</translation>
+        <translation type="obsolete">Autoryzacja nie powiodła się!</translation>
     </message>
     <message>
         <source>Error: </source>
-        <translation>Błąd:</translation>
+        <translation type="obsolete">Błąd:</translation>
     </message>
     <message>
         <source>Internal error!</source>
@@ -244,7 +315,7 @@
     </message>
     <message>
         <source>Unable to connect!</source>
-        <translation>Błąd połączenia!</translation>
+        <translation type="obsolete">Błąd połączenia!</translation>
     </message>
     <message>
         <source>Enter new file name:</source>
@@ -281,6 +352,18 @@
     <message>
         <source>Copy</source>
         <translation>Skopiuj</translation>
+    </message>
+    <message>
+        <source>Ubuntu One authorization has failed. Try once again or check login settings.</source>
+        <translation>Autoryzacja w Ubuntu One nie powiodła się. Spróbuj jeszcze raz lub sprawdź ustawienia logowania.</translation>
+    </message>
+    <message>
+        <source>Unknown error: </source>
+        <translation>Nieznany błąd:</translation>
+    </message>
+    <message>
+        <source>Unable to connect. Check internet connection.</source>
+        <translation>Nie można połączyć z siecią. Sprawadź połączenie z Internetem.</translation>
     </message>
 </context>
 <context>
@@ -366,26 +449,77 @@
     </message>
 </context>
 <context>
+    <name>TaskMenu</name>
+    <message>
+        <source>Account</source>
+        <translation>Konto</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ustawienia</translation>
+    </message>
+    <message>
+        <source>About Ubi</source>
+        <translation>O Ubi</translation>
+    </message>
+</context>
+<context>
     <name>main</name>
     <message>
         <source>Error while downloading!</source>
-        <translation>Błąd podczas pobierania!</translation>
+        <translation type="obsolete">Błąd podczas pobierania!</translation>
     </message>
     <message>
         <source>Error while uploading!</source>
-        <translation>Błąd podczas wysyłania!</translation>
+        <translation type="obsolete">Błąd podczas wysyłania!</translation>
     </message>
     <message>
         <source>File downloaded!</source>
-        <translation>Plik został pobrany!</translation>
+        <translation type="obsolete">Plik został pobrany!</translation>
     </message>
     <message>
         <source>File uploaded!</source>
-        <translation>Plik został wysłany!</translation>
+        <translation type="obsolete">Plik został wysłany!</translation>
     </message>
     <message>
         <source>File added to the queue!</source>
-        <translation>Plik dodany do kolejki!</translation>
+        <translation type="obsolete">Plik dodany do kolejki!</translation>
+    </message>
+    <message>
+        <source>File operation canceled!</source>
+        <translation type="obsolete">Operacja anulowana!</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Ubi&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Ubi&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;p&gt;An unofficial Ubuntu One app for Maemo 5 and other Qt-enabled platforms.&lt;/p&gt;&lt;p&gt;&lt;small&gt;http://ubi.garage.maemo.org&lt;/small&gt;&lt;/p&gt;&lt;p&gt;&lt;small&gt;© 2012 Michal Kosciesza&lt;/small&gt;&lt;/p&gt;</source>
+        <translation>&lt;p&gt;Nieoficjalna aplikacja Ubuntu One dla Maemo 5 i innych platform obsługujących Qt.&lt;/p&gt;&lt;p&gt;&lt;small&gt;http://ubi.garage.maemo.org&lt;/small&gt;&lt;/p&gt;&lt;p&gt;&lt;small&gt;© 2012 Michal Kosciesza&lt;/small&gt;&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>File downloaded.</source>
+        <translation>Plik został pobrany.</translation>
+    </message>
+    <message>
+        <source>File uploaded.</source>
+        <translation>Plik został wysłany.</translation>
+    </message>
+    <message>
+        <source>Error while downloading.</source>
+        <translation>Błąd podczas pobierania.</translation>
+    </message>
+    <message>
+        <source>Error while uploading.</source>
+        <translation>Błąd podczas wysyłania.</translation>
+    </message>
+    <message>
+        <source>File added to the queue.</source>
+        <translation>Plik dodany do kolejki.</translation>
+    </message>
+    <message>
+        <source>File operation canceled.</source>
+        <translation>Operacja anulowana.</translation>
     </message>
 </context>
 </TS>
