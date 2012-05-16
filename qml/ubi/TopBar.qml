@@ -16,30 +16,42 @@ Item {
         visible = true;
     }
 
-    Rectangle {
-        id: box
+    Item {
         width: 50
         height: width
-        radius: 5
-        color: mouseArea.pressed ? "white" : "black"
-        opacity: 0.2
-        x: -width/2
-        y: -width/2
+        //color: mouseArea1.pressed ? "white" : "black"
+        //opacity: 0.2
+        anchors.left: root.left
 
         MouseArea {
-            id: mouseArea
+            id: mouseArea1
             anchors.fill: parent
             onClicked: Utils.minimizeWindow()
         }
     }
 
-    Rectangle {
+    Item {
+        width: 50
+        height: width
+        //color: mouseArea2.pressed ? "white" : "black"
+        //opacity: 0.2
+        anchors.right: root.right
+
+        MouseArea {
+            id: mouseArea2
+            anchors.fill: parent
+            onClicked: Qt.quit()
+        }
+    }
+
+
+    /*Rectangle {
         width: box.width/2-16
         height: 2
         color: "white"
         x: 8
         y: (box.width/4)-1
-    }
+    }*/
 
     /*Rectangle {
         width: parent.width

@@ -32,8 +32,12 @@ Page {
 
         //uid.text = account.id;
         username.text = account.username;
+        //username.text = "Molly";
+
         //nick.text = account.nickname;
+
         email.text = account.email;
+        //email.text = "molly@ponny.eu";
         storage.text = Conv.bytesToSize(account.total_storage);
 
         U1.getRootNode(secrets,root);

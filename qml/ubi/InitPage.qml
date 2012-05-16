@@ -13,7 +13,7 @@ Showable {
     function init() {
         if(Utils.isAuthorized()) {
             //title = "Hi, "+Utils.name();
-            //login();
+            login();
         } else {
             pageStack.initialPage = "LoginPage.qml";
             hide();

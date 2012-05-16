@@ -20,22 +20,26 @@ Item {
 
     /*Rectangle {
         id: bor
-        //color: Const.WARM_GREY_COLOR
-        color: Const.TRANSPARENT
-        height: 1; width: root.width
-        anchors.top: shadow.bottom
+        color: Const.WARM_GREY_COLOR
+        //color: Const.TRANSPARENT
+        height: 2; width: root.width
+        anchors.top: box.top
     }*/
 
-    /*Rectangle {
+    Rectangle {
         id: box
         width: root.width
         height: root.height
-        anchors.top: shadow.bottom
+        y:3
         color: Const.TRANSPARENT
         //color: Const.COOL_GREY_COLOR
-    }*/
+        gradient: Gradient {
+            GradientStop {position: 0.0; color: "#333333"}
+            GradientStop {position: 1.0; color: "#151515"}
+        }
+    }
 
-    Row {
+    /*Row {
         id: box
         y: 3
         Repeater {
@@ -45,7 +49,7 @@ Item {
                 source: "images/bg.png"
             }
         }
-    }
+    }*/
 
     Shadow {
         anchors.bottom: box.top

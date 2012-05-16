@@ -18,17 +18,18 @@ Rectangle {
 
     TopBar {
         id: topbar
-        Component.onCompleted: {
-            visible = Utils.isMaemo();
+        /*Component.onCompleted: {
+            //visible = Utils.isMaemo();
         }
         onVisibleChanged: {
             if(visible)
                 visible = Utils.isMaemo();
-        }
+        }*/
     }
 
     NotificationNew {
         id: tip
+        z: 201
         anchors.horizontalCenter: mainWindow.horizontalCenter
         y: mainWindow.height-height-Const.SYSTEM_BAR_HEIGHT-Const.TEXT_MARGIN
     }

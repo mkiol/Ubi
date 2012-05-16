@@ -97,6 +97,7 @@ Contacts synchronization.
 <p>In <a href="https://garage.maemo.org/frs/?group_id=2327">Download</a> section also an experimental release for Nokia N9/950 and Symbian was published. Please note that these apps have not been tested on real devices.</p>
 
 <h1>Download</h1>
+<p>The latest release is version 0.9.3-1</p>
 <h2>Nokia N900</h2>
 <p>The application can be downloaded via the Application Manager under the
 Network section if you have the <i>extras-devel</i> repository enabled.</p>
@@ -115,12 +116,12 @@ Network section if you have the <i>extras-devel</i> repository enabled.</p>
 <br/>
 <h1>Screenshots</h1>
 <div id="screenshots">
-<a href="big/screenshot22.png"><img src="screenshot22.png"/></a>
-<a href="big/screenshot06.png"><img src="screenshot06.png"/></a>
-<a href="big/screenshot05.png"><img src="screenshot05.png"/></a>
-<a href="big/screenshot09.png"><img src="screenshot09.png"/></a>
-<a href="big/screenshot10.png"><img src="screenshot10.png"/></a>
-<a href="big/screenshot11.png"><img src="screenshot11.png"/></a>
+<a href="big/screenshot001.png"><img src="screenshot001.png"/></a>
+<a href="big/screenshot002.png"><img src="screenshot002.png"/></a>
+<a href="big/screenshot003.png"><img src="screenshot003.png"/></a>
+<a href="big/screenshot004.png"><img src="screenshot004.png"/></a>
+<a href="big/screenshot005.png"><img src="screenshot005.png"/></a>
+<a href="big/screenshot006.png"><img src="screenshot006.png"/></a>
 </div>
 &copy; 2012 Michal Kosciesza
 </div>
