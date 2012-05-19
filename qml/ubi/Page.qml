@@ -28,49 +28,5 @@ Item {
 
     Component.onCompleted: {
         Utils.setOrientation(orientation);
-        //reloadMenu();
     }
-
-    /*function reloadMenu() {
-        var buttons = root.menu;
-
-        var menu = taskBar.getMenu();
-        var comp = Qt.createComponent("components/Button.qml");
-
-        var i,l;
-        if(menu.children.length>0) {
-            l = menu.children.length;
-            for(i=0;i<l;++i) {
-                menu.children[i].destroy();
-            }
-        }
-        if(buttons && buttons.length>0) {
-            l = buttons.length;
-            for(i=0;i<l;++i) {
-                var obj = comp.createObject(menu);
-                if (obj==null) {
-                    console.log("Error creating menu Button!");
-                } else {
-                    var b = buttons[i];
-                    obj.label = b[0];
-                    obj.disabled = b[1];
-                    obj.buttonClicked.connect(function(name){
-                        taskBar.close();
-                        menuFun(name);
-                    });
-                }
-            }
-        }
-    }*/
-
-    /*SystemBar {
-        z: 100
-        id: systemBar
-        onClicked: {
-            var mask = pageStack.currentPage.mask;
-            if(mask.state=="idle") {
-                taskBar.open();
-            }
-        }
-    }*/
 }

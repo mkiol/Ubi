@@ -27,25 +27,17 @@ Page {
 
     function onResp(secrets,account)
     {
-        //console.log("onResp");
         mask.state = "idle";
-
-        //uid.text = account.id;
         username.text = account.username;
         //username.text = "Molly";
-
-        //nick.text = account.nickname;
-
         email.text = account.email;
         //email.text = "molly@ponny.eu";
         storage.text = Conv.bytesToSize(account.total_storage);
-
         U1.getRootNode(secrets,root);
     }
 
     function onRespRootNode(resp)
     {
-        //console.log("onResp");
         mask.state = "idle";
         var ubytes = Conv.bytesToSize(resp.used_bytes);
         var uprec = Math.round((resp.used_bytes/resp.max_bytes)*100);
@@ -54,7 +46,6 @@ Page {
 
     function onErr(status)
     {
-        //console.log("onErr");
         mask.state = "idle";
         if(status==401) {
             tip.show(qsTr("Ubuntu One authorization has failed. Try once again or check login settings."));
@@ -78,23 +69,12 @@ Page {
             spacing: Const.DEFAULT_MARGIN
             x: Const.TEXT_MARGIN
 
-            /*Text {
-                font.pixelSize: 30
-                color: "white"
-                text: "Id:"
-            }
-            Text {
-                id: uid
-                font.pixelSize: 30
-                color: "black"
-                wrapMode: Text.Wrap
-                width: root.width - 6*Const.DEFAULT_MARGIN
-            }*/
             Text {
                 font.pixelSize: 30
                 color: "white"
                 text: qsTr("User name:")
             }
+
             Text {
                 id: username
                 font.pixelSize: 30
@@ -102,26 +82,17 @@ Page {
                 wrapMode: Text.Wrap
                 width: root.width - 6*Const.DEFAULT_MARGIN
             }
+
             Line {
                 width: root.width-2*Const.TEXT_MARGIN
             }
-            /*Text {
-                font.pixelSize: 30
-                color: "white"
-                text: qsTr("Nickname:")
-            }
-            Text {
-                id: nick
-                font.pixelSize: 30
-                color: "black"
-                wrapMode: Text.Wrap
-                width: root.width - 6*Const.DEFAULT_MARGIN
-            }*/
+
             Text {
                 font.pixelSize: 30
                 color: "white"
                 text: qsTr("Email:")
             }
+
             Text {
                 id: email
                 font.pixelSize: 30
@@ -129,14 +100,17 @@ Page {
                 wrapMode: Text.Wrap
                 width: root.width - 6*Const.DEFAULT_MARGIN
             }
+
             Line {
                 width: root.width-2*Const.TEXT_MARGIN
             }
+
             Text {
                 font.pixelSize: 30
                 color: "white"
                 text: qsTr("Total storage:")
             }
+
             Text {
                 id: storage
                 font.pixelSize: 30
@@ -144,14 +118,17 @@ Page {
                 wrapMode: Text.Wrap
                 width: root.width - 6*Const.DEFAULT_MARGIN
             }
+
             Line {
                 width: root.width-2*Const.TEXT_MARGIN
             }
+
             Text {
                 font.pixelSize: 30
                 color: "white"
                 text: qsTr("Used:")
             }
+
             Text {
                 id: used
                 font.pixelSize: 30
@@ -159,6 +136,7 @@ Page {
                 wrapMode: Text.Wrap
                 width: root.width - 6*Const.DEFAULT_MARGIN
             }
+
             Spacer{}
         }
     }

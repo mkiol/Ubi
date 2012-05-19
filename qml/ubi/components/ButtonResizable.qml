@@ -36,8 +36,6 @@ Item {
         color: Const.WARM_GREY_COLOR
         radius: 10
         visible: root.state == "pressed"
-        //border.color: "black"
-        //border.width: Const.SHADOW_OFFSET
     }
 
     Image {
@@ -58,7 +56,6 @@ Item {
         anchors.left: box.left; anchors.right: box.right
         anchors.margins: Const.DEFAULT_MARGIN
         anchors.verticalCenter: box.verticalCenter
-        //visible: root.iconSource == ""
     }
 
     MouseArea {

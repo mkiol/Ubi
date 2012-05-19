@@ -22,7 +22,8 @@ Page {
         width: root.width
         height: root.height
 
-        contentHeight: content.height+Const.TOP_BAR_HEIGHT+Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
+        contentHeight: content.height+Const.TOP_BAR_HEIGHT
+                       +Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
         y: Const.TOP_BAR_HEIGHT
 
         Column {
@@ -65,8 +66,6 @@ Page {
                     Utils.resetAuthorization();
                     pageStack.initialPage = "LoginPage.qml";
                     pageStack.clear();
-                    //pageStack.pop();
-                    //pageStack.currentPage.init();
                 }
             }
         }

@@ -92,11 +92,11 @@ Page {
         }
     }
 
-    function setContentType(type)
+    /*function setContentType(type)
     {
-        //ctype.text = type;
-        //ctype.font.italic = false;
-    }
+        ctype.text = type;
+        ctype.font.italic = false;
+    }*/
 
     function onErr(status)
     {
@@ -112,7 +112,6 @@ Page {
 
     function onRespRename(prop)
     {
-        //console.log("onRespRename");
         mask.state = "idle";
         init(prop); pageStack.prevPage().init();
         tip.show(qsTr("File renamed!"));
@@ -125,7 +124,6 @@ Page {
 
     function onRespStopPublishing(prop)
     {
-        //console.log("onRespStopPublishing");
         mask.state = "idle";
         init(prop); pageStack.prevPage().init();
         tip.show(qsTr("Publishing stopped!"));
@@ -138,7 +136,6 @@ Page {
 
     function onRespStartPublishing(prop)
     {
-        //console.log("onRespStartPublishing");
         mask.state = "idle";
         init(prop); pageStack.prevPage().init();
         tip.show(qsTr("Publishing started!"));
@@ -240,35 +237,10 @@ Page {
                 }
             }
 
-            /*Text {
-                font.pixelSize: 30
-                color: "white"
-                text: qsTr("Preview:")
-            }
-            Rectangle {
-                color: Const.TRANSPARENT
-                height: 200; width: 200
-                border.color: Const.DEFAULT_FOREGROUND_COLOR
-                border.width: 1
-                radius: 5
-            }*/
-
             Spacer{}
 
         }
     }
-
-    /*FileSelector {
-        id: fileSelector
-        z: 200
-        y: 200
-        folder: Utils.lastFolder()=="" ? Const.DEFAULT_FOLDER : Utils.lastFolder()
-        onFolderSelected: {
-            fileSelector.state = "invisible";
-            U1.getFileContent(secrets,root,properties.content_path,folder,properties.size,Utils);
-            Utils.setLastFolder(folder);
-        }
-    }*/
 
     FileDialog {
         id: fileSelector
@@ -333,15 +305,12 @@ Page {
 
 
     function getParentPath(path) {
-        //console.log(path);
         var ppath;
         var ind = path.lastIndexOf("/");
         if(ind>=0) {
             ppath = path.substr(0,ind);
         }
         if(path=="") ppath = "/";
-
-        //console.log(ppath);
         return ppath;
     }
 
@@ -373,7 +342,6 @@ Page {
                 mask.state = "busy";
                 var currentPath = root.properties.resource_path;
                 var targetPath = getParentPath(root.properties.path)+"/"+resp;
-                //console.log("targetPath: "+targetPath);
                 U1.renameFile(secrets,currentPath,targetPath,root);;
             } else {
                 tip.show(qsTr("Invalid file name!"))
@@ -384,33 +352,6 @@ Page {
             mask.state = "idle";
         }
     }
-
-    /*
-    menu: [
-        [qsTr("Download"),false],
-        [qsTr("Publish"),false],
-        [qsTr("Rename"),false],
-        [qsTr("Delete"),false]
-    ]
-
-    function menuFun(id) {
-        if(id==qsTr("Download")) {
-            fileSelector.state = "visible";
-        }
-        if(id==qsTr("Publish")) {
-            if(isPublic) {
-                dialogStopPublish.open();
-            } else {
-                dialogStartPublish.open();
-            }
-        }
-        if(id==qsTr("Rename")) {
-            dialogRename.open();
-        }
-        if(id==qsTr("Delete")) {
-            dialogDelete.open();
-        }
-    }*/
 
     TaskMenu {
         z: 200

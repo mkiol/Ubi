@@ -12,20 +12,6 @@ Item {
     signal clicked()
     signal clickedOnMask()
 
-    /*Shadow {
-        id: shadow
-        y:0
-        visible: false
-    }*/
-
-    /*Rectangle {
-        id: bor
-        color: Const.WARM_GREY_COLOR
-        //color: Const.TRANSPARENT
-        height: 2; width: root.width
-        anchors.top: box.top
-    }*/
-
     Rectangle {
         id: box
         width: root.width
@@ -38,18 +24,6 @@ Item {
             GradientStop {position: 1.0; color: "#151515"}
         }
     }
-
-    /*Row {
-        id: box
-        y: 3
-        Repeater {
-            model: root.width
-            Image {
-                id: img
-                source: "images/bg.png"
-            }
-        }
-    }*/
 
     Shadow {
         anchors.bottom: box.top
@@ -66,14 +40,6 @@ Item {
             color: "white"
             text: pageStack.currentPage.title
         }
-
-        /*Image {
-            source: mouse.pressed? "images/menu-arrow-grey.png" : "images/menu-arrow.png"
-            anchors.verticalCenter: title.verticalCenter
-            visible: !taskBar.isEmpty && !progressIcon.visible
-            width: 18
-            height: 14
-        }*/
 
         Image {
             id: progressIcon
@@ -104,35 +70,6 @@ Item {
         anchors.horizontalCenter: root.horizontalCenter
         onClicked: root.clicked()
     }
-
-    /*Rectangle {
-        id: leftSeparator
-
-        width: 1
-        height: 40
-        anchors { left: parent.left; leftMargin: 80; verticalCenter: parent.verticalCenter }
-        color: "white"
-        opacity: 0.5
-    }
-
-    Rectangle {
-        id: rightSeparator
-
-        width: 1
-        height: 40
-        anchors { right: parent.right; rightMargin: 80; verticalCenter: parent.verticalCenter }
-        color: "white"
-        opacity: 0.5
-    }*/
-
-    /*ToolIcon {
-        id: minimizeButton
-
-        width: 80
-        anchors { verticalCenter: parent.verticalCenter; left: parent.left }
-        iconSource: "images/minimize.png"
-        onClicked: Utils.minimizeWindow()
-    }*/
 
     Button {
         id: minimizeButton

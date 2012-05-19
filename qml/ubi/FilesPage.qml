@@ -54,7 +54,6 @@ Page {
 
     function onErr(status)
     {
-        //console.log("onErr");
         mask.state = "idle";
         if(status==401) {
             tip.show(qsTr("Ubuntu One authorization has failed. Try once again or check login settings."));
@@ -70,7 +69,6 @@ Page {
 
     function onRespRename()
     {
-        //console.log("onRespRename");
         pageStack.prevPage().init();
         mask.state = "idle";
         tip.show(qsTr("Folder renamed!"));
@@ -78,7 +76,6 @@ Page {
 
     function onErrRename(status)
     {
-        //console.log("onErrRenamed");
         mask.state = "idle";
         if(status==401) {
             tip.show(qsTr("Ubuntu One authorization has failed. Try once again or check login settings."));
@@ -89,7 +86,6 @@ Page {
 
     function onRespNew()
     {
-        //console.log("onRespNew");
         pageStack.currentPage.init();
         mask.state = "idle";
         tip.show(qsTr("New folder created!"));
@@ -111,12 +107,9 @@ Page {
         }
         var component = Qt.createComponent("components/File.qml");
         l = nodes.length;
-        //console.log("l="+l);
         for (i=0; i<l; i++) {
             var object = component.createObject(files);
             var ind = nodes[i].path.lastIndexOf("/");
-            //object.textMax = root.width/17;
-            //console.log("ind="+ind);
             if(ind>=0) {
                 object.name = nodes[i].path.substr(ind+1);
             }  else {
@@ -124,12 +117,7 @@ Page {
             }
             object.isDirectory = nodes[i].kind == "directory";
             object.properties = nodes[i];
-            //object.width = root.width;
-            //object.height = 50;
             if(object.isDirectory) {
-                /*if(!nodes[i].has_children) {
-                    object.description = "Empty";
-                }*/
                 object.clicked.connect(function(prop) {
                             pageStack.push("FilesPage.qml");
                             pageStack.currentPage.init(prop);
@@ -178,12 +166,6 @@ Page {
             mask.state = "idle";
         }
 
-        /*if(files.children.length==0) {
-            empty.visible = true;
-        } else {
-            empty.visible = false;
-        }*/
-
         if(l==0) {
             empty.visible = true;
         } else {
@@ -224,23 +206,6 @@ Page {
         visible: false
     }
 
-    /*FileSelector {
-        id: fileSelector
-        z: 200
-        folder: Utils.lastFolder()=="" ? Const.DEFAULT_FOLDER : Utils.lastFolder()
-        folderOnly: false
-        onFileSelected: {
-            mask.state = "idle";
-            //console.log("selected: "+file+" "+U1.fixFolder(folder));
-            fileSelector.close();
-            Utils.setLastFolder(folder);
-            var path = content_path+"/"+file;
-            //console.log(path);
-            U1.uploadFile(secrets,root,path,file,folder,Utils);
-        }
-
-    }*/
-
     FileDialog {
         id: fileSelector
         z: 200
@@ -257,15 +222,12 @@ Page {
     }
 
     function getParentPath(path) {
-        //console.log(path);
         var ppath;
         var ind = path.lastIndexOf("/");
         if(ind>=0) {
             ppath = path.substr(0,ind);
         }
         if(path=="") ppath = "/";
-
-        //console.log(ppath);
         return ppath;
     }
 
@@ -331,7 +293,6 @@ Page {
                 mask.state = "busy";
                 var currentPath = root.properties.resource_path;
                 var targetPath = getParentPath(root.properties.path)+"/"+resp;
-                //console.log("targetPath: "+targetPath);
                 U1.renameFile(secrets,currentPath,targetPath,root);
             } else {
                 tip.show(qsTr("Invalid folder name!"))
@@ -363,7 +324,6 @@ Page {
                 else
                     rpath = root.resource_path;
                 var newPath = rpath+"/"+resp;
-                //console.log("newPath: "+newPath);
                 U1.newFolder(secrets,newPath,root);
             } else {
                 tip.show(qsTr("Invalid folder name!"))
@@ -373,39 +333,6 @@ Page {
             Utils.setOrientation(root.orientation);
         }
     }
-
-    /*[qsTr("Upload file"),false],
-    [qsTr("Rename"),false],
-    [qsTr("Delete"),false],
-    [qsTr("New folder"),false],
-    [qsTr("Refresh"),false]
-    function menuFun(id) {
-        if(id==qsTr("Upload file")) {
-            mask.state = "dialog";
-            fileSelector.open();
-        }
-        if(id==qsTr("Refresh")) {
-            init(root.properties);
-        }
-        if(id==qsTr("Rename")) {
-            if(root.path=="/") {
-                tip.show(qsTr("Root folder can't be renamed!"));
-            } else {
-                dialogRename.open();
-            }
-        }
-        if(id==qsTr("Delete")) {
-            if(root.path=="/") {
-                tip.show(qsTr("Root folder can't be deleted!"));
-            } else {
-                dialogDelete.open();
-            }
-        }
-        if(id==qsTr("New folder")) {
-            dialogNew.open();
-        }
-    }
-*/
 
     TaskMenu {
         z: 200

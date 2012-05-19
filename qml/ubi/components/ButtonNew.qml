@@ -10,9 +10,6 @@ Item {
 
     state: mouseArea.pressed && !root.disabled ? "pressed" : "unpressed"
 
-    //width: box.width
-    //height: box.height
-
     signal buttonClicked(string label)
 
     Rectangle {
@@ -26,9 +23,7 @@ Item {
     Rectangle {
         id: box
         color: root.disabled ? Const.COOL_GREY_COLOR : "black"
-        //height: textbox.height+20
         height: root.height
-        //width: textbox.width<100 ? 120 : textbox.width+20
         width: root.width
         radius: 10
     }
@@ -41,15 +36,10 @@ Item {
         color: Const.WARM_GREY_COLOR
         radius: 10
         visible: root.state == "pressed"
-        //border.color: "black"
-        //border.width: Const.SHADOW_OFFSET
     }
 
     onLabelChanged: {
         if(root.label.length>root.maxSize) {
-            //console.log("root.label: "+root.label)
-            //console.log("root.label.length: "+root.label.length)
-            //console.log("root.maxSize: "+root.maxSize)
             textbox.text = root.label.substring(0,root.maxSize-3)+"...";
         } else {
             textbox.text = root.label;
@@ -71,8 +61,6 @@ Item {
 
         Text {
             id: textbox
-            //x: 10
-            //y: 10
             font.pixelSize: 30
             color: root.disabled ? "gray" : "white"
         }

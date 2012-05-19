@@ -12,19 +12,11 @@ Rectangle {
 
     PageStack {
         id: pageStack
-        //initialPage: Qt.resolvedUrl("StartPage.qml")
         initialPage: Qt.resolvedUrl("FilesPage.qml")
     }
 
     TopBar {
         id: topbar
-        /*Component.onCompleted: {
-            //visible = Utils.isMaemo();
-        }
-        onVisibleChanged: {
-            if(visible)
-                visible = Utils.isMaemo();
-        }*/
     }
 
     NotificationNew {
@@ -33,10 +25,6 @@ Rectangle {
         anchors.horizontalCenter: mainWindow.horizontalCenter
         y: mainWindow.height-height-Const.SYSTEM_BAR_HEIGHT-Const.TEXT_MARGIN
     }
-
-    /*TaskBar {
-        id: taskBar
-    }*/
 
     Connections {
         target: Utils
@@ -80,8 +68,6 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
             id: progressArea
             width: parent.width-3*Const.DEFAULT_MARGIN
-
-            //onHeightChanged: console.log("height: "+height);
         }
     }
 

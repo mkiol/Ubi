@@ -7,19 +7,10 @@ Item {
 
     property int count: 0
 
-    /*Rectangle {
-        anchors.fill: parent
-        color: "red"
-    }*/
-
     height: taskView.height+Const.DEFAULT_MARGIN
 
     function addTask(type,filename)
     {
-        //emptyLabel.visible = Utils.emptyQuee();
-        //emptyLabel.visible = false;
-        //console.log("1. taskView.childrens.length: "+taskView.children.length);
-        //console.log("1. taskView.height: "+taskView.height);
         var comp = Qt.createComponent("components/Bar.qml");
         //var obj = comp.createObject(taskView,{"width": root.width});
         var obj = comp.createObject(taskView);
@@ -37,8 +28,6 @@ Item {
             if(type=="upload")
                 obj.isUpload = true;
         }
-        //console.log("2. taskView.childrens.length: "+taskView.children.length);
-        //console.log("2. taskView.height: "+taskView.height);
     }
 
     function setProgress(filename, progress)
@@ -67,8 +56,6 @@ Item {
 
     function stop(filename)
     {
-        //console.log("stop task");
-        //console.log("3. taskView.childrens.length: "+taskView.children.length);
         var l = taskView.children.length;
         for(var i=0;i<l;++i) {
             var item = taskView.children[i];
@@ -79,16 +66,12 @@ Item {
                 return;
             }
         }
-        //console.log("4. taskView.childrens.length: "+taskView.children.length);
-        //emptyLabel.visible = Utils.emptyQuee();
     }
 
     Column {
         id: taskView
         width: parent.width
         spacing: Const.DEFAULT_MARGIN
-
-        //onHeightChanged: console.log("takView.height: "+height)
 
         Text {
             font.pixelSize: Const.DEFAULT_FONT_PIXEL_SIZE

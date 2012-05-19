@@ -8,8 +8,6 @@ Page {
     title: qsTr("Login")
     orientation: "auto"
 
-    //property alias taskMenu: taskMenu
-
     function getToken() {
         mask.state = "busy";
         U1.getToken(user.text,pass.text,root)
@@ -24,14 +22,12 @@ Page {
         Utils.setName(account.username);
 
         tip.show(qsTr("Logged in!"));
-        //pageStack.initialPage = "StartPage.qml";
         pageStack.initialPage = "FilesPage.qml";
         pageStack.currentPage.init();
     }
 
     function onErr(status) {
         mask.state = "idle";
-        //console.log("onErr");
         if(status==401) {
             tip.show(qsTr("Ubuntu One authorization has failed. Try once again or check login settings."));
         } else if(status==0) {
@@ -46,12 +42,13 @@ Page {
         height: root.height
 
         contentHeight: content.height+Const.TOP_BAR_HEIGHT+Const.SYSTEM_BAR_HEIGHT+Const.TEXT_MARGIN
-        y: Const.TOP_BAR_HEIGHT
 
         Column {
             id: content
             spacing: Const.DEFAULT_MARGIN
             x: Const.TEXT_MARGIN
+
+            Spacer {}
 
             Text {
                 font.pixelSize: 30
@@ -83,15 +80,4 @@ Page {
         }
     }
 
-    /*TaskMenu {
-        z: 200
-        id: taskMenu
-        menuHeight: menuFixed.height+4*Const.DEFAULT_MARGIN
-
-        menuDynamic: _menuDyn
-        Flow {
-            y: root.height-taskMenu.menuHeight-Const.SYSTEM_BAR_HEIGHT+1*Const.DEFAULT_MARGIN
-            id: _menuDyn
-        }
-    }*/
 }

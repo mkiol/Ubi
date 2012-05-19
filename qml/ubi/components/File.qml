@@ -21,16 +21,6 @@ Item {
 
     signal clicked(variant prop)
 
-    /*Rectangle {
-        id: shadow
-        width: box.width
-        height: box.height
-        color: Const.SHADOW_COLOR;
-        radius: 10
-        x: Const.SHADOW_OFFSET;
-        y: Const.SHADOW_OFFSET;
-    }*/
-
     Rectangle {
         id: box
         color: Const.TRANSPARENT
@@ -38,26 +28,14 @@ Item {
         width: root.width
     }
 
-    /*Rectangle {
-        color: Const.DEFAULT_FOREGROUND_COLOR
-        height: 1
-        anchors.bottom: box.bottom;
-        anchors.left: box.left;
-        anchors.right: box.right;
-    }*/
-
     Rectangle {
         id: boxShadow
-        //width: box.width-2*Const.TEXT_MARGIN+2*Const.DEFAULT_MARGIN
         width: box.width
         height: box.height
         y: 5
-        //color: root.isDirectory ? "white" : "black"
         color: Const.DEFAULT_DIALOG_FOREGROUND_COLOR
-        //anchors.verticalCenter: box.verticalCenter
         anchors.horizontalCenter: box.horizontalCenter
         opacity: 0.4
-        //radius: 10
         visible: mouseArea.pressed
     }
 
@@ -140,21 +118,4 @@ Item {
             root.clicked(root.properties);
         }
     }
-
-    /*states: [
-        State {
-            name: "unpressed"
-            PropertyChanges {target: shadow; x: Const.SHADOW_OFFSET}
-            PropertyChanges {target: shadow; y: Const.SHADOW_OFFSET}
-            PropertyChanges {target: box; x: 0}
-            PropertyChanges {target: box; y: 0}
-        },
-        State {
-            name: "pressed"
-            PropertyChanges {target: shadow; x: Const.SHADOW_OFFSET}
-            PropertyChanges {target: shadow; y: Const.SHADOW_OFFSET}
-            PropertyChanges {target: box; x: Const.SHADOW_OFFSET}
-            PropertyChanges {target: box; y: Const.SHADOW_OFFSET}
-        }
-    ]*/
 }

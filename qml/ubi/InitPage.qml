@@ -21,14 +21,6 @@ Showable {
     }
 
     function login() {
-        /*var secrets = {
-            token: Utils.token(),
-            secret: Utils.tokenSecret(),
-            consumer_key : Utils.customerKey(),
-            consumer_secret: Utils.customerSecret()
-        };
-        U1.getRootNode(secrets,root);
-        */
         pageStack.currentPage.init();
     }
 
@@ -67,13 +59,10 @@ Showable {
                 source: "images/ubi100.png"
                 width: 104; height: 70
                 anchors.horizontalCenter: parent.horizontalCenter
-                //y: (box.height-height)/3
             }
 
             Text {
                 id: loading
-                //anchors.top: pic.bottom
-                //anchors.margins: Const.TEXT_MARGIN
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: 25
                 color: "white"
@@ -81,8 +70,6 @@ Showable {
             }
 
             BusyIndicator {
-                //anchors.top: loading.bottom
-                //anchors.margins: 2*Const.TEXT_MARGIN
                 anchors.horizontalCenter: parent.horizontalCenter
                 running: true
             }

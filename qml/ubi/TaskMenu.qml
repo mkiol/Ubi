@@ -6,10 +6,8 @@ DialogBlank {
     id: root
 
     property alias menuHeight: root.boxHeight
-
     property alias menuFixed: _menuFixed
     property Flow menuDynamic
-
     property bool contexMenu: false
 
     onOpened: {
@@ -29,8 +27,6 @@ DialogBlank {
 
     Flow {
         id: _menuFixed
-
-        //y: root.height-root.menuHeight+1*Const.DEFAULT_MARGIN
 
         anchors.top: root.contexMenu ? line.bottom : root.menuDynamic.bottom
         anchors.topMargin: Const.DEFAULT_MARGIN

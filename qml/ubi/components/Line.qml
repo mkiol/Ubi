@@ -3,7 +3,7 @@ import "../UIConstants.js" as Const
 
 Item {
     id: root
-    height: 10
+    height: 2
 
     Row {
         anchors.bottom: root.bottom
@@ -18,21 +18,4 @@ Item {
             }
         }
     }
-
-    /*Rectangle {
-        y:0
-        color: "black"
-        height: 1
-        width: root.width
-        opacity: 0.5
-        //anchors.bottom: root.bottom
-    }
-    Rectangle {
-        y:3
-        color: "black"
-        height: 1
-        width: root.width
-        opacity: 0.2
-        //anchors.bottom: root.bottom
-    }*/
 }

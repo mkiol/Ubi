@@ -1,3 +1,11 @@
+ubi (0.9.3-1) unstable; urgency=low
+
+  * UTF-8 encoding support
+  * New icons
+  * Updated GUI
+
+ -- Michal Kosciesza <mkiol@o2.pl>  Fri, 18 May 2012 22:10:09 +0200
+
 ubi (0.9.2-1) unstable; urgency=low
 
   * Added "publishing" feature

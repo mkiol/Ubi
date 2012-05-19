@@ -14,6 +14,12 @@ Item {
         } else {
             busy.running = false;
         }
+
+        if(root.state=="idle") {
+            systemBar.state = "active";
+        } else {
+            systemBar.state = "inactive";
+        }
     }
 
     Rectangle {

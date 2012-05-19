@@ -1,65 +1,88 @@
 <RCC>
     <qresource prefix="/">
-        <file>qml/ubi/AccountPage.qml</file>
-        <file>qml/ubi/bytesconv.js</file>
-        <file>qml/ubi/DownloadArea.qml</file>
-        <file>qml/ubi/DownloadProgressBar.qml</file>
-        <file>qml/ubi/FileSelector.qml</file>
-        <file>qml/ubi/FilesPage.qml</file>
-        <file>qml/ubi/ISOdate.js</file>
-        <file>qml/ubi/LoginPage.qml</file>
-        <file>qml/ubi/main.qml</file>
-        <file>qml/ubi/PageStack.qml</file>
-        <file>qml/ubi/PropertiesPage.qml</file>
-        <file>qml/ubi/SettingsPage.qml</file>
-        <file>qml/ubi/Shadow.qml</file>
-        <file>qml/ubi/StartPage.qml</file>
-        <file>qml/ubi/SystemBar.qml</file>
-        <file>qml/ubi/TaskBar.qml</file>
-        <file>qml/ubi/u1.js</file>
-        <file>qml/ubi/UIConstants.js</file>
         <file>qml/ubi/components/Bar.qml</file>
+        <file>qml/ubi/components/BusyIndicator.qml</file>
         <file>qml/ubi/components/Button.qml</file>
         <file>qml/ubi/components/ButtonNew.qml</file>
+        <file>qml/ubi/components/ButtonResizable.qml</file>
+        <file>qml/ubi/components/DialogBlank.qml</file>
         <file>qml/ubi/components/DialogBox.qml</file>
         <file>qml/ubi/components/DialogCombo.qml</file>
         <file>qml/ubi/components/DialogInfo.qml</file>
         <file>qml/ubi/components/DialogInput.qml</file>
         <file>qml/ubi/components/DialogYesNo.qml</file>
         <file>qml/ubi/components/File.qml</file>
-        <file>qml/ubi/components/FileOld.qml</file>
+        <file>qml/ubi/components/FileSmall.qml</file>
         <file>qml/ubi/components/Line.qml</file>
         <file>qml/ubi/components/Mask.qml</file>
-        <file>qml/ubi/components/Notification.qml</file>
-        <file>qml/ubi/components/Page.qml</file>
+        <file>qml/ubi/components/NotificationNew.qml</file>
+        <file>qml/ubi/components/Showable.qml</file>
         <file>qml/ubi/components/Spacer.qml</file>
         <file>qml/ubi/components/TextField.qml</file>
-        <file>qml/ubi/components/ToolIcon.qml</file>
         <file>qml/ubi/images/account.png</file>
         <file>qml/ubi/images/back.png</file>
+        <file>qml/ubi/images/back-old.png</file>
+        <file>qml/ubi/images/bg.png</file>
         <file>qml/ubi/images/close.png</file>
+        <file>qml/ubi/images/close-old.png</file>
         <file>qml/ubi/images/document.png</file>
+        <file>qml/ubi/images/document-small.png</file>
         <file>qml/ubi/images/down.png</file>
         <file>qml/ubi/images/download.png</file>
+        <file>qml/ubi/images/download-old.png</file>
         <file>qml/ubi/images/files.png</file>
         <file>qml/ubi/images/folder.png</file>
+        <file>qml/ubi/images/folder-small.png</file>
         <file>qml/ubi/images/internet.png</file>
         <file>qml/ubi/images/menu-arrow.png</file>
         <file>qml/ubi/images/menu-arrow-grey.png</file>
         <file>qml/ubi/images/menu-arrow-orange.png</file>
         <file>qml/ubi/images/minimize.png</file>
+        <file>qml/ubi/images/minimize-old.png</file>
+        <file>qml/ubi/images/music.png</file>
+        <file>qml/ubi/images/music-small.png</file>
         <file>qml/ubi/images/next.png</file>
+        <file>qml/ubi/images/options.png</file>
         <file>qml/ubi/images/photo.png</file>
+        <file>qml/ubi/images/photo-small.png</file>
         <file>qml/ubi/images/progress.png</file>
         <file>qml/ubi/images/progress-small.png</file>
+        <file>qml/ubi/images/pushbutton_disabled.png</file>
+        <file>qml/ubi/images/pushbutton_normal.png</file>
+        <file>qml/ubi/images/refresh.png</file>
         <file>qml/ubi/images/settings.png</file>
         <file>qml/ubi/images/share.png</file>
         <file>qml/ubi/images/ubi50.png</file>
+        <file>qml/ubi/images/ubi100.png</file>
         <file>qml/ubi/images/up.png</file>
         <file>qml/ubi/images/upload.png</file>
+        <file>qml/ubi/images/upload-old.png</file>
+        <file>qml/ubi/images/up-old.png</file>
+        <file>qml/ubi/images/video.png</file>
+        <file>qml/ubi/images/video-small.png</file>
         <file>qml/ubi/oauth/oauth.js</file>
         <file>qml/ubi/oauth/README.txt</file>
         <file>qml/ubi/oauth/sha1.js</file>
+        <file>qml/ubi/AccountPage.qml</file>
+        <file>qml/ubi/bytesconv.js</file>
+        <file>qml/ubi/DownloadArea.qml</file>
+        <file>qml/ubi/FileDialog.qml</file>
+        <file>qml/ubi/FilesPage.qml</file>
+        <file>qml/ubi/InitPage.qml</file>
+        <file>qml/ubi/ISOdate.js</file>
+        <file>qml/ubi/LoginPage.qml</file>
+        <file>qml/ubi/main.qml</file>
+        <file>qml/ubi/Page.qml</file>
+        <file>qml/ubi/PageStack.qml</file>
+        <file>qml/ubi/PropertiesPage.qml</file>
+        <file>qml/ubi/SettingsPage.qml</file>
+        <file>qml/ubi/Shadow.qml</file>
+        <file>qml/ubi/SystemBar.qml</file>
+        <file>qml/ubi/TaskBar.qml</file>
+        <file>qml/ubi/TaskMenu.qml</file>
+        <file>qml/ubi/TopBar.qml</file>
+        <file>qml/ubi/u1.js</file>
+        <file>qml/ubi/UIConstants.js</file>
         <file>translations/ubi.pl.qm</file>
     </qresource>
 </RCC>

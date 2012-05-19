@@ -9,7 +9,6 @@ Item {
     property int speed: 1
 
     state: hidden ? "closed" : "opened"
-    //visible: !hidden
 
     Component.onCompleted: {
         if(hidden) state = "closed";
@@ -32,7 +31,6 @@ Item {
         State {
             name: "closed"
             PropertyChanges { target: root; y: root.height }
-            //PropertyChanges { target: root; visible: false }
         }
     ]
 
@@ -50,7 +48,6 @@ Item {
         id: time
         interval: root.speed*root.height/2
         onTriggered: {
-            //console.log("aaa");
             root.visible = false;
         }
     }

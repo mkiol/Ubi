@@ -28,7 +28,6 @@ Item {
         id: box
         color: root.disabled ? Const.COOL_GREY_COLOR : "black"
         height: root.iconSource=="" ? textbox.height+20 : icon.height+20
-        //width: textbox.width<100 ? 120 : textbox.width+20
         width: root.iconSource=="" ? textbox.width+30 : icon.width+30
         radius: 10
     }
@@ -41,8 +40,6 @@ Item {
         color: Const.WARM_GREY_COLOR
         radius: 10
         visible: root.state == "pressed"
-        //border.color: "black"
-        //border.width: Const.SHADOW_OFFSET
     }
 
     Image {
@@ -57,9 +54,6 @@ Item {
 
     onLabelChanged: {
         if(root.label.length>root.maxSize) {
-            //console.log("root.label: "+root.label)
-            //console.log("root.label.length: "+root.label.length)
-            //console.log("root.maxSize: "+root.maxSize)
             textbox.text = root.label.substring(0,root.maxSize-3)+"...";
         } else {
             textbox.text = root.label;

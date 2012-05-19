@@ -22,7 +22,6 @@ Item {
         id: box
         height: text.height+4*Const.DEFAULT_MARGIN
         width: root.width
-        //color: Const.DEFAULT_DIALOG_FOREGROUND_COLOR
         color: Const.COOL_GREY_COLOR
         radius: 5
 

@@ -31,13 +31,11 @@ Item {
             anchors.verticalCenter: parent.verticalCenter
             color: Const.TRANSPARENT
             border.width: 2
-            //radius: 5
             border.color: Const.DEFAULT_FOREGROUND_COLOR
             height: 40
             width: icon.visible?
                        root.width-icon.width-button.width-2*Const.DEFAULT_MARGIN :
                        root.width-button.width-1*Const.DEFAULT_MARGIN
-            //x: icon.visible? icon.width+5 : 0
 
             Rectangle {
                 id: bar
@@ -64,7 +62,6 @@ Item {
                 id: caption
                 font.pixelSize: 25
                 anchors.centerIn: parent
-                //color: Const.DEFAULT_FOREGROUND_COLOR
                 text: root.label
                 width: bbar.width
                 elide: Text.ElideRight

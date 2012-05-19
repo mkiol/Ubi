@@ -1,11 +1,11 @@
 # Add more folders to ship with the application, here
-folder_01.source = qml/ubi
-folder_01.target = qml
-DEPLOYMENTFOLDERS = folder_01
+#folder_01.source = qml/ubi
+#folder_01.target = qml
+#DEPLOYMENTFOLDERS = folder_01
 
-folder_02.source = translations/ubi.pl.qm
-folder_02.target = translations
-DEPLOYMENTFOLDERS += folder_02
+#folder_02.source = translations/ubi.pl.qm
+#folder_02.target = translations
+#DEPLOYMENTFOLDERS += folder_02
 
 # Additional import path used to resolve QML modules in Creator's code model
 QML_IMPORT_PATH =
@@ -43,7 +43,7 @@ SOURCES += main.cpp \
     utils.cpp
 
 # evil_hack_to_fool_lupdate
-include(translation.pri)
+#include(translation.pri)
 
 # Please do not modify the following two lines. Required for deployment.
 include(qmlapplicationviewer/qmlapplicationviewer.pri)
@@ -70,5 +70,5 @@ HEADERS += \
 
 TRANSLATIONS += translations/ubi.pl.ts
 
-#RESOURCES += \
-#    ubi.qrc
+RESOURCES += \
+    ubi.qrc
