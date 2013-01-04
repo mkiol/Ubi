@@ -1,0 +1,68 @@
+ubi (0.9.4-1) unstable; urgency=low
+
+  * Italian translation (thanks to Alessandro Pra' contribution)
+  * Initial support for Meego/Harmattan devices
+  * Fix: vkb hiding on 'Enter' key
+  * Fix: support '[' and ']' in files names
+
+ -- Michal Kosciesza <mkiol@o2.pl>  Sun, 10 Jun 2012 19:00:36 +0200
+
+ubi (0.9.3-3) unstable; urgency=low
+
+  * Portrait mode for Meego/Harmattan
+  * Vkb hiding fix for Meego/Harmattan
+
+ -- Michal Kosciesza <mkiol@o2.pl>  Fri, 01 Jun 2012 22:59:59 +0200
+
+ubi (0.9.3-2) unstable; urgency=low
+
+  * Patch for authorization bug
+
+ -- Michal Kosciesza <mkiol@o2.pl>  Sat, 19 May 2012 14:40:25 +0200
+
+ubi (0.9.3-1) unstable; urgency=low
+
+  * UTF-8 encoding support
+  * New icons
+  * Updated GUI
+
+ -- Michal Kosciesza <mkiol@o2.pl>  Fri, 18 May 2012 22:10:09 +0200
+
+ubi (0.9.2-1) unstable; urgency=low
+
+  * Added "publishing" feature
+
+ -- Michal Kosciesza <mkiol@o2.pl>  Sat, 05 May 2012 14:56:55 +0200
+
+ubi (0.9.1-2) unstable; urgency=low
+
+  * New icons
+  * Updated GUI
+
+ -- Michal Kosciesza <mkiol@o2.pl>  Thu, 03 May 2012 19:04:26 +0200
+
+ubi (0.9.1-1) unstable; urgency=low
+
+  * Used storage information in Account tab
+  * Redesign of files presentation
+
+ -- Michal Kosciesza <mkiol@o2.pl>  Wed, 02 May 2012 13:50:34 +0200
+
+ubi (0.9.0-2) unstable; urgency=low
+
+  * Update pl_PL translation
+
+ -- Michal Kosciesza <mkiol@o2.pl>  Sat, 28 Apr 2012 10:39:53 +0200
+
+ubi (0.9.0-1) unstable; urgency=low
+
+  * Update Icon and Section information
+
+ -- Michal Kosciesza <mkiol@o2.pl>  Sat, 28 Apr 2012 08:08:50 +0200
+
+ubi (0.9.0) unstable; urgency=low
+
+  * Beta preview
+
+ -- Michal Kosciesza <mkiol@o2.pl>  Mon, 23 Apr 2012 20:55:02 +0100
+
